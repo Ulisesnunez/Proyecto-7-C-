@@ -266,7 +266,7 @@ p {
     background: #2b1e1a;
 }
 
-.contact {
+#contact {
     padding-top: 20px;
     background: #a13431;
     padding-bottom: 0;
@@ -282,12 +282,19 @@ p {
     font-size: 60px;
     margin-right: 40px;
     display: inline-block;
+    color: 	#fff4e6;
 }
 
 .socialmedia__legend{
     margin-right: 16px;
     font-size: 30px;
     font-family: 'Mukta', sans-serif ;
+}
+
+.socialmedia__icon a{
+text-decoration: none;
+list-style: none;
+
 }
 
 @media (max-width: 768px) {
