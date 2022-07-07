@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    text-align: center;
+    font-family: 'Mukta', sans-serif;
+}
+
+nav{
+    font-family: 'Mukta', sans-serif;
+    background-color: #fff4e6;
+	padding: 1em 3em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+    nav ul{
+	display: flex;
+	}
+
+		nav ul li{
+			list-style: none;
+			margin-right: 2em;
+		}
+
+		nav ul li a{
+			font-size: 1.4em;
+			text-decoration: none;
+			color: #a13431;
+		}
+
+		nav ul li a:hover{
+			color: #a13431;
+			font-weight: 600;
+		}
+
+
+
+.logo {
+    margin-left: 30px;
+}
+
+.logo__name{
+    font-size: 2em;
+    color: #a13431;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+    .logo__name:hover{
+        color: #a13431;
+        font-weight: 600;
+    }
+
+
+.title{
+    margin-bottom: 0.3em;
+    font-size: 3em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff4e6;
+}
+
+#contact{
+    height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+    background: #a13431;
+    padding-bottom: 2em;
+}
+
+.socialmedia{
+    margin-top: 3em;
+    display: flex;
+    color: 	#fff4e6;
+}
+
+.socialmedia__icon{
+    font-size: 4em;
+    margin-right: 1em;
+    display: inline-block;
+    color: #fff4e6;
+}
+
+.socialmedia__legend{
+    margin-right: 2em;
+    font-size: 2em;
+    font-family: 'Mukta', sans-serif ;
+}
+
+@media (max-width: 768px) {
+
+    .title {
+        margin-bottom: 0;
+        font-size: 3em;
+    }
+
+    .sau {
+        height: 80em;
+    }
+
+   
+    
+}
