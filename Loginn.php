@@ -28,7 +28,7 @@ if(isset($_POST['login'])){
         else{
             echo'<script type="text/javascript">
             alert("User y pass incorrectos");
-            window.location.href="Loggin.php";
+            window.location.href="../../login.html";
             </script>';
         }
     }
