@@ -44,6 +44,11 @@ nav{
 
 
 
+
+.dropdown-menu{
+    background-color: #a13431;
+}
+
 .logo {
     margin-left: 30px;
 }
@@ -82,7 +87,7 @@ p {
 
 
 .contenido{
-    height: 30em;
+    height: 80em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -90,7 +95,6 @@ p {
 }
 
 .sau {
-    padding: 1em;
     background: #563d35;
 }
 
@@ -134,11 +138,12 @@ p {
 }
 
 .about {
+    height: 40em;
     background: #2b1e1a;
 }
 
 #contact{
-    height: 20em;
+    height: 25em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,7 +161,7 @@ p {
 
 .socialmedia__icon{
     font-size: 4em;
-    margin-right: 1em;
+    margin-right: 0.2em;
     display: inline-block;
     color: #fff4e6;
 }
@@ -167,17 +172,20 @@ p {
     font-family: 'Mukta', sans-serif ;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
 
     .title {
         margin-bottom: 0;
         font-size: 3em;
     }
 
-    .sau {
-        height: 80em;
+    .sau{
+        height: 40em;
     }
 
+    .about{
+        height: 30em;
+    }
    
     
-}
+} 
