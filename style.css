@@ -13,6 +13,11 @@ body {
     font-family: 'Mukta', sans-serif;
 }
 
+
+#btn-cat{
+	background-color: #a13431;
+}
+
 nav{
     font-family: 'Mukta', sans-serif;
     background-color: #fff4e6;
@@ -85,9 +90,13 @@ p {
     font-family: 'Mukta', sans-serif;
 }
 
-.carousel-item {
- max-width: 400px;
-max-height: 600px;
+.carousel-item{
+    height: 35em;
+}
+
+.carousel{
+    width: 30em;
+    margin: auto;
 }
 
 .contenido{
@@ -175,6 +184,29 @@ max-height: 600px;
     font-size: 2em;
     font-family: 'Mukta', sans-serif ;
 }
+
+
+
+
+.p__articulo{
+	width: 100%;
+	height: auto;
+	margin: 1em auto;
+	padding: 3em 2em;
+	border: dotted 2px #960210;
+	overflow: auto;
+}
+
+.text-center{
+	text-align: center;
+}
+
+
+
+
+
+
+
 
 @media (min-width: 768px) {
 
