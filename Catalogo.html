@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
+    <link href="hamburgers.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="shortcut icon" href="MYU PERFIL.PNG">   
     <title>MYU Indumentaria</title>
@@ -31,9 +32,9 @@
                     <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Acceder 
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" href="#">Iniciar Sesion</a></li>
-                      <li><a class="dropdown-item" href="#">Registrarte</a></li>
+                    <ul class="dropdown-menu" id="drop1" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item" id="drop" href="#">Iniciar Sesion</a></li>
+                      <li><a class="dropdown-item" id="drop" href="#">Registrarte</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -43,6 +44,32 @@
     </div>
 
     <header class="header">
+      <div class="navbar navbar-expand-xs navbar-light bg-nav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="#">Remeras</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact">Pantalones</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Colegio
+              </a>
+              <ul class="dropdown-menu" id="drop1" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" id="drop" href="#">Juan XXIII</a></li>
+                <li><a class="dropdown-item" id="drop" href="#">Santisimo Redentor</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+
       <section class="text-center p__articulo">
         <div class="row py-3 justify-content-around">
           <div class="card m-1 col-md-5 col-lg-3">
