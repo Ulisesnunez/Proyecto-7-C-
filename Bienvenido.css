@@ -29,8 +29,6 @@ nav{
 }
     nav ul{
 	display: flex;
-    justify-content: end;
-    align-items: end;
 	}
 
 		nav ul li{
@@ -50,46 +48,16 @@ nav{
 		}
 
 
-
-
-
-#drop1{
-    background-color: #563d35;
-    color: #fff4e6;
+.dropdown-menu{
+    background-color: #a13431;
 }
-
-#drop{
-    color: #fff4e6;
-    background-color: #563d35;
-    
-}
-
-ul{
-	display: flex;
-    justify-content: start;
-    align-items: start;
-	}
-		ul li{
-			list-style: none;
-		}
-
-		ul li a{
-			font-size: 1.5em;
-			text-decoration: none;
-			color: #a13431;
-		}
-
-		ul li a:hover{
-			color: #a13431;
-			font-weight: 600;
-		}
 
 .logo {
-    margin-left: 3em;
+    margin-left: 30px;
 }
 
 .logo__name{
-    font-size: 1.5em;
+    font-size: 2em;
     color: #a13431;
     text-decoration: none;
     text-transform: uppercase;
@@ -223,12 +191,15 @@ p {
 	height: auto;
 	margin: 1em auto;
 	padding: 3em 2em;
+	border: dotted 2px #960210;
 	overflow: auto;
 }
 
 .text-center{
 	text-align: center;
 }
+
+
 
 
 
@@ -249,15 +220,6 @@ p {
     .about{
         height: 30em;
     }
-
-    .logo__name{
-        font-size: 2em;
-        color: #a13431;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
-        .logo__name:hover{
-            color: #a13431;
-            font-weight: 600;
-        }
+   
+    
 } 
