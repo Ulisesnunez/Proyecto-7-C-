@@ -230,9 +230,14 @@ p {
 	text-align: center;
 }
 
+.bg{
+    background-color: #563d35;
+}
 
-
-
+.cardCat{
+    width: 75%;
+    height: 35em;
+}
 
 
 @media (min-width: 768px) {
