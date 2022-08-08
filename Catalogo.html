@@ -1,3 +1,16 @@
+<?php
+include("config.php");
+$catalogo = "SELECT * FROM catalogo";
+$resultado = mysqli_query($conex, $catalogo);
+while($row-> mysql_fetch_array($resultado));
+    $nro_producto=$row['nro_producto'];
+    $producto =$row['producto'];
+    $talle =$row['talle'];
+    $colegio = $row['colegio'];
+    $stock=$row['stock'];
+    $precio=$row['precio'];
+
+?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,10 +65,10 @@
           <div class="card m-1 col-md-5 col-lg-3">
             <img src="imagenesropa/imagen5.jpeg" class="card-img-top d-block w-100" alt="...">
             <div class="card-body">
-              <h3 class="card-title">Campera Juan XXIII</h3>
+              <h3 class="card-title"><?php echo $producto[1] ?></h3>
               <div class="precio"> 
 								<div class="box-precio">
-									<span class="precio2">$2500</span>
+									<span class="precio2"><?php echo $precio[1] ?></span>
 								</div>
 							</div>
 							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
@@ -75,10 +88,10 @@
           <div class="card m-1 col-md-5 col-lg-3">
             <img src="imagenesropa/imagen12.jpeg" class="card-img-top d-block w-100" alt="...">
             <div class="card-body">
-              <h3 class="card-title">Remera Juan XXIII</h3>
+              <h3 class="card-title"><?php echo $producto[5] ?></h3>
               <div class="precio"> 
 								<div class="box-precio">
-									<span class="precio2">$2500</span>
+									<span class="precio2"><?php echo $precio[5] ?></span>
 								</div>
 							</div>
 							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
@@ -97,10 +110,10 @@
           <div class="card m-1 col-md-5 col-lg-3">
             <img src="imagenesropa/imagen11.jpeg" class="card-img-top d-block w-100" alt="...">
             <div class="card-body">
-              <h3 class="card-title">Chomba Juan XXIII</h3>
+              <h3 class="card-title"><?php echo $producto[9] ?></h3>
               <div class="precio"> 
 								<div class="box-precio">
-									<span class="precio2">$2500</span>
+									<span class="precio2"><?php echo $precio[9] ?></span>
 								</div>
 							</div>
 							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
@@ -119,10 +132,10 @@
           <div class="card m-1 col-md-5 col-lg-3">
             <img src="imagenesropa/imagen4.jpeg" class="card-img-top d-block w-100" alt="...">
             <div class="card-body">
-              <h3 class="card-title">Indumentaria</h3>
+              <h3 class="card-title"><?php echo $producto[13] ?></h3>
               <div class="precio"> 
 								<div class="box-precio">
-									<span class="precio2">$2500</span>
+									<span class="precio2"><?php echo $precio[13] ?></span>
 								</div>
 							</div>
 							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
