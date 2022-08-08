@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2022 a las 22:23:35
--- Versión del servidor: 10.4.22-MariaDB
--- Versión de PHP: 8.0.13
+-- Tiempo de generación: 06-06-2022 a las 22:12:08
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,48 +18,100 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `proyecto`
+-- Base de datos: `myu`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Estructura de tabla para la tabla `admin`
 --
 
-CREATE TABLE `usuarios` (
-  `ID` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `pass` varchar(200) NOT NULL
+CREATE TABLE `admin` (
+  `nombre_a` varchar(30) DEFAULT NULL,
+  `contraseña` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `usuarios`
+-- Estructura de tabla para la tabla `carrito`
 --
 
-INSERT INTO `usuarios` (`ID`, `username`, `pass`) VALUES
-(1, 'agustin paredes', '$2y$10$zk91UDSTN/7jM1Axyb59uOyJ2J4ASYSbrQbo0ktoYhHOGf3X3LBWi'),
-(2, 'pepe juan', '$2y$10$mhobYt4vU5OWXyubcgDFE.nUVPPacRCv0HOGUM1qnZ1fAeewJ6WFy');
+CREATE TABLE `carrito` (
+  `prendas` int(11) DEFAULT NULL,
+  `cant` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `catalogo`
+--
+
+CREATE TABLE `catalogo` (
+  `nro_producto` int(11) NOT NULL,
+  `producto` varchar(100) DEFAULT NULL,
+  `talle` char(1) DEFAULT NULL,
+  `colegio` varchar(30) DEFAULT NULL,
+  `stock` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `ID` varchar(100) NULL,
+  `username` varchar(30) NULL,
+  `pass` varchar(30) NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `informe_ventas`
+--
+
+CREATE TABLE `informe_ventas` (
+  `mes` int(11) NOT NULL,
+  `cant_ventas` int(11) DEFAULT NULL,
+  `recaudado` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedidos`
+--
+
+CREATE TABLE `pedidos` (
+  `nro_pedido` int(11) DEFAULT NULL,
+  `cliente` varchar(100) DEFAULT NULL,
+  `metodo_de_pago` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `usuarios`
+-- Indices de la tabla `informe_ventas`
 --
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`ID`);
+ALTER TABLE `informe_ventas`
+  ADD PRIMARY KEY (`mes`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT de la tabla `informe_ventas`
 --
-ALTER TABLE `usuarios`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `informe_ventas`
+  MODIFY `mes` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
