@@ -345,6 +345,22 @@ p {
     font-family: 'Nunito Sans', sans-serif;
 }
 
+#paginas{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff4e6;
+}
+
+
+.intento{
+    height: 30em;
+    background-color: #fff4e6;
+}
+
+
+
 @media (min-width: 768px) {
 
     .title {
