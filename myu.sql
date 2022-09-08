@@ -54,7 +54,8 @@ CREATE TABLE `catalogo` (
   `producto` varchar(100) DEFAULT NULL,
   `talle` char(1) DEFAULT NULL,
   `colegio` varchar(30) DEFAULT NULL,
-  `stock` int(11) DEFAULT NULL
+  `stock` int(11) DEFAULT NULL,
+  `precio` int(6) DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

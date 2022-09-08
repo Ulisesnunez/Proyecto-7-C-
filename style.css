@@ -333,9 +333,28 @@ p {
     display: flex;
     text-align: center;
     margin: auto;
-    width: 20em;
+    width: 10em;
 }
 
+#back{
+    background-color: #a13431;
+}
+
+.form-check{
+    width: 17em;
+}
+
+.form-check-input{
+    width: 10em;
+}
+
+#floatingTextarea{
+    height: 3.5em;
+}
+
+.titu{
+    font-size: 2em;
+}
 
 #nuevo{
     height: auto;
