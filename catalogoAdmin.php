@@ -1,3 +1,12 @@
+<?php
+include("config.php");
+$catalogo = "SELECT * FROM catalogo";
+$resultado = mysqli_query($conex, $catalogo);
+while($row-> mysql_fetch_array($resultado));
+    $nro_producto=$row['nro_producto'];
+    $producto =$row['producto'];
+    $precio=$row['precio'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +55,37 @@
     <header class="header">
       <section class="text-center p__articulo">
         <div class="row py-3 justify-content-around">
+    
+          <?php
+    $resultado=mysqli_query($conexion, $catalogo);
+    while($row=mysqli_fetch_assoc($resultado)){
+  
+        <div class="card">
+          <div class="card m-1 col-md-5 col-lg-3">
+            <img src="imagenesropa/imagen5.jpeg" class="card-img-top d-block w-100" alt="...">
+            <div class="card-body">
+              <h3 class="card-title">echo $row['producto']</h3>
+              <div class="precio"> 
+								<div class="box-precio">
+									<span class="precio2"> echo $row['precio']</span>
+								</div>
+							</div>
+							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
+							  <option selected>Talles:</option>
+							  <option value="1">Small</option>
+							  <option value="2">Medium</option>
+							  <option value="3">Large</option>
+							  <option value="4">XL</option>
+							</select>
+                <a href="articulo1.html" class="btn" id="btn-cat">
+                    <img src="settings.svg" alt="" class="ajuste">
+                </a>
+                <a href="#" class="btn" id="btn-cat">
+                    <img src="tacho.svg" alt="" class="ajuste">
+                </a>
+            </div>
+      ?>
+
           <div class="card m-1 col-md-5 col-lg-3" id="div">
             <img src="imagenesropa/imagen5.jpeg" class="card-img-top d-block w-100" alt="...">
             <div class="card-body">
