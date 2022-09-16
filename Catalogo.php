@@ -29,7 +29,7 @@ while($row-> mysql_fetch_array($resultado));
     <div class="head sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-nav">
             <div class="container-fluid">
-              <a class="logo__name" href="index.html">MYU INDUMENTARIA</a>
+              <a class="logo__name" href="index.php">MYU INDUMENTARIA</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -46,8 +46,8 @@ while($row-> mysql_fetch_array($resultado));
                       Acceder 
                     </a>
                     <ul class="dropdown-menu" id="drop1" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" id="drop" href="Loginn.html">Iniciar Sesion</a></li>
-                      <li><a class="dropdown-item" id="drop" href="Registro.html">Registrarte</a></li>
+                      <li><a class="dropdown-item" id="drop" href="Loginn.php">Iniciar Sesion</a></li>
+                      <li><a class="dropdown-item" id="drop" href="Registro.php">Registrarte</a></li>
                     </ul>
                   </li>
                   <li><i class='bx bx-cart-add bx-border' style='font-size: 1.5em; color: #a13431;'></i></li>

@@ -63,7 +63,7 @@ if(isset($_POST['registro'])){
        
         <input type="submit" value="Registrarme" id="registro" name="registro" form="formRegistro">
        
-        <a href="Loginn.html">Inicia sesión.</a>
+        <a href="Loginn.php">Inicia sesión.</a>
       </form>
     </div>
   </body>
