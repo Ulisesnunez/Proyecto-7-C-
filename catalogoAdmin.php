@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-$catalogo = "SELECT * FROM catalogo";
+$catalogo = "SELECT * FROM catalogo WHERE talle = '6'";
 $resultado = mysqli_query($conex, $catalogo);
 while($row-> mysql_fetch_array($resultado));
     $nro_producto=$row['nro_producto'];
@@ -59,8 +59,8 @@ while($row-> mysql_fetch_array($resultado));
           <?php
     $resultado=mysqli_query($conexion, $catalogo);
     while($row=mysqli_fetch_assoc($resultado)){
-  
-        <div class="card">
+
+      
           <div class="card m-1 col-md-5 col-lg-3">
             <img src="imagenesropa/imagen5.jpeg" class="card-img-top d-block w-100" alt="...">
             <div class="card-body">
@@ -84,6 +84,7 @@ while($row-> mysql_fetch_array($resultado));
                     <img src="tacho.svg" alt="" class="ajuste">
                 </a>
             </div>
+          </div>
       ?>
 
           <div class="card m-1 col-md-5 col-lg-3" id="div">
