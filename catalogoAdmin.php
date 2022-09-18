@@ -56,8 +56,7 @@ while($row-> mysql_fetch_array($resultado));
       <section class="text-center p__articulo">
         <div class="row py-3 justify-content-around">
     
-          <?php
-    $resultado=mysqli_query($conexion, $catalogo);
+    <?php      
     while($row=mysqli_fetch_assoc($resultado)){
 
       
@@ -85,7 +84,7 @@ while($row-> mysql_fetch_array($resultado));
                 </a>
             </div>
           </div>
-      ?>
+    ?>
 
           <div class="card m-1 col-md-5 col-lg-3" id="div">
             <img src="imagenesropa/imagen5.jpeg" class="card-img-top d-block w-100" alt="...">

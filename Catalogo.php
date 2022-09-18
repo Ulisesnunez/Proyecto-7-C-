@@ -1,13 +1,9 @@
 <?php
 include("config.php");
-$catalogo = "SELECT * FROM catalogo";
+$catalogo = "SELECT * FROM catalogo WHERE talle = '6' ";
 $resultado = mysqli_query($conex, $catalogo);
 while($row-> mysql_fetch_array($resultado));
-    $nro_producto=$row['nro_producto'];
     $producto =$row['producto'];
-    $talle =$row['talle'];
-    $colegio = $row['colegio'];
-    $stock=$row['stock'];
     $precio=$row['precio'];
 
 ?> 
