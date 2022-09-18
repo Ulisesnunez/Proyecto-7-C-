@@ -97,7 +97,7 @@
     <section class="contenido about">
 
         <h2 class="title">Nosotros</h2>
-        <p>BASA2 System está conformado por un grupo de estudiantes del JUAN 23, los cuales como finalidad tienen desarrollar un proyecto para fin de año.
+        <p>MyU System está conformado por un grupo de estudiantes del JUAN 23, los cuales como finalidad tienen desarrollar un proyecto para fin de año.
         </p>
 
     </section>
