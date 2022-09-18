@@ -48,7 +48,7 @@ else{
   <body>
 
     <div class="login-box">
-      <img src="MYU PERFIL.PNG" class="avatar" alt="Avatar Image">
+      <img src="COGOLLO-NOT-MYU" class="avatar" alt="Avatar Image">
       <h1>Inicio de sesión</h1>
       <form action="loggin.php" method="POST" id="formLogin">
         <label for="username">Usuario</label>

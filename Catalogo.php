@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-$catalogo = "SELECT * FROM catalogo WHERE talle = '6' ";
+$catalogo = "SELECT FROM catalogo WHERE talle = '6' ";
 $resultado = mysqli_query($conex, $catalogo);
 while($row-> mysql_fetch_array($resultado));
     $producto =$row['producto'];
