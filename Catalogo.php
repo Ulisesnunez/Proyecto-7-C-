@@ -61,10 +61,10 @@ while($row-> mysql_fetch_array($resultado));
           <div class="card m-1 col-md-5 col-lg-3">
             <img src="imagenesropa/imagen5.jpeg" class="card-img-top d-block w-100" alt="...">
             <div class="card-body">
-              <h3 class="card-title"><?php echo $producto[1] ?></h3>
+              <h3 class="card-title"><?php echo $producto ?></h3>
               <div class="precio"> 
 								<div class="box-precio">
-									<span class="precio2"><?php echo $precio[1] ?></span>
+									<span class="precio2"><?php echo $precio ?></span>
 								</div>
 							</div>
 							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
@@ -84,10 +84,10 @@ while($row-> mysql_fetch_array($resultado));
           <div class="card m-1 col-md-5 col-lg-3">
             <img src="imagenesropa/imagen12.jpeg" class="card-img-top d-block w-100" alt="...">
             <div class="card-body">
-              <h3 class="card-title"><?php echo $producto[5] ?></h3>
+              <h3 class="card-title"><?php echo $producto ?></h3>
               <div class="precio"> 
 								<div class="box-precio">
-									<span class="precio2"><?php echo $precio[5] ?></span>
+									<span class="precio2"><?php echo $precio ?></span>
 								</div>
 							</div>
 							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
@@ -106,10 +106,10 @@ while($row-> mysql_fetch_array($resultado));
           <div class="card m-1 col-md-5 col-lg-3">
             <img src="imagenesropa/imagen11.jpeg" class="card-img-top d-block w-100" alt="...">
             <div class="card-body">
-              <h3 class="card-title"><?php echo $producto[9] ?></h3>
+              <h3 class="card-title"><?php echo $producto ?></h3>
               <div class="precio"> 
 								<div class="box-precio">
-									<span class="precio2"><?php echo $precio[9] ?></span>
+									<span class="precio2"><?php echo $precio ?></span>
 								</div>
 							</div>
 							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
@@ -128,10 +128,10 @@ while($row-> mysql_fetch_array($resultado));
           <div class="card m-1 col-md-5 col-lg-3">
             <img src="imagenesropa/imagen4.jpeg" class="card-img-top d-block w-100" alt="...">
             <div class="card-body">
-              <h3 class="card-title"><?php echo $producto[13] ?></h3>
+              <h3 class="card-title"><?php echo $producto ?></h3>
               <div class="precio"> 
 								<div class="box-precio">
-									<span class="precio2"><?php echo $precio[13] ?></span>
+									<span class="precio2"><?php echo $precio ?></span>
 								</div>
 							</div>
 							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">

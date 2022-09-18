@@ -14,7 +14,7 @@ if(isset($_POST['registro'])){
     if($resultadoUser){ 
         echo'<script type="text/javascript">
         alert("El usuario ya existe");
-        window.location.href="registro.php";
+        window.location.href="Registro.php";
         </script>';
     }
     else{
@@ -25,12 +25,12 @@ if(isset($_POST['registro'])){
         if(!$resultadoRegistro){ 
             echo'<script type="text/javascript">
             alert("No se pudo registrar el usuario");
-            window.location.href="registro.php";
+            window.location.href="Registro.php";
             </script>';
         }
         else{
             echo'<script type="text/javascript">
-            window.location.href="index 2.php";
+            window.location.href="index.php";
             </script>';
         }
         
