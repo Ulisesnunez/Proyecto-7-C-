@@ -217,7 +217,21 @@ p {
     align-items: center;
     padding-top: 2em;
     background: #a13431;
-    padding-bottom: 2em;
+    padding-bottom: 2em; 
+}
+
+footer{
+    height: 25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+    background: #a13431;
+    padding-bottom: 2em; 
+    position:absolute;
+    bottom:0;
+    width: 100%;
 }
 
 .socialmedia{
@@ -238,7 +252,6 @@ p {
     font-size: 2em;
     font-family: 'Mukta', sans-serif ;
 }
-
 
 
 
