@@ -49,7 +49,8 @@ $resultado = mysqli_query($conex, $catalogo);
     </div>
 
     <header class="header">
-      <section class="text-center p__articulo">
+    <a class="btn btn-dark" href="agregarCard.php" role="button">COGOLLO GOMA</a>
+    <section class="text-center p__articulo">
         <div class="row py-3 justify-content-around">
    
           <div class="card m-1 col-md-5 col-lg-3" id="div">
