@@ -1,3 +1,7 @@
+<?php
+include("connect.php");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,125 +48,19 @@
           </nav>
     </div>
 
-    <form method="post">
-    <section class="row bg">
-      <div class="col-lg-5">
-        <img src="imagenesropa/imagen5.jpeg" alt="" class="cardCat my-3">
-      </div>
-      <div class="col-lg-7 m-auto">
-        <h1 class="titu mt-4">Ingresar nombre del articulo:</h1>
-        <div class="cambiar">
-          <div class="form-floating newtitle m-auto">
-            
-            <input type = "text" name = "producto" placeholder="nombre del producto">
-          </div>
-        </div>
-
-
-        <h1 class="mt-3 titu">Ingresar el precio:</h1>
-        <div class="cambiar">
-          <div class="form-floating newtitle m-auto">
-            <input type="text" name="precio" placeholder="precio del producto">
-      
-          </div>
-        </div>
-
-        <h1 class="mt-3 titu">Ingresar el stock:</h1>
-        <div class="cambiar">
-          <div class="form-floating newtitle m-auto">
-            <input type="text" name="stock" placeholder="Stock disponible">
-          </div>
-        </div>
-
-        <h1 class="mt-3 titu">Ingresar el colegio correspondiente:</h1>
-        <div class="cambiar">
-          <div class="form-floating newtitle m-auto">
-            <input type="text" name="colegio" placeholder="ingrese el colegio">
-          </div>
-        </div>
-
-        <div id="back">
-            <div class="form-check mt-5">
-                <h1 class="titu">Talles disponibles</h1>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                6
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                8
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                10
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                12
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                14
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                16
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                S
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                M
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                L
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                XL
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                XXL
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                <label class="form-check-label" for="flexCheckChecked">
-                XXXL
-                </label>
-            </div>
-        </div>
-
-        <imput class="tilde" type="submit" name = "button"><img src="tilde.svg" alt="" id="tilde">
-       
-        
-    </div>
-</form>
-
+  <form method= 'post'>
+  <input type="text" name="producto" placeholder="ingrese nombre de producto">
+  <input type="text" name="precio" placeholder="ingrese precio del producto ">
+  <input type="text" name="stock" placeholder="ingrese stock disponible">
+  <input type="text" name="colegio" placeholder="ingrese el colegio correspondiente">
+  <input type= "checkbox" name="6">
+  <input type= "checkbox" name="8">
+  <input type= "checkbox" name="10">
+  <input type= "checkbox" name="12">
+  <input type= "checkbox" name="14">
+  <input type= "checkbox" name="16">
+  <input type="submit" name = "register"> 
+  </form>
     <?php
     include("agregarCardIngreso.php");
     ?>

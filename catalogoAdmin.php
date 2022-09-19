@@ -49,7 +49,7 @@ $resultado = mysqli_query($conex, $catalogo);
     </div>
 
     <header class="header">
-    <a class="btn btn-dark" href="agregarCard.php" role="button">COGOLLO GOMA</a>
+    <a class="btn btn-dark" href="agregarCard.php" role="button">AGREGAR PRODUCTO</a>
     <section class="text-center p__articulo">
         <div class="row py-3 justify-content-around">
    
