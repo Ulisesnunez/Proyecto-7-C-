@@ -49,7 +49,7 @@ if(isset($_POST['registro'])){
   <body>
 
     <div class="login-box">
-      <img src="MYU PERFIL.PNG" class="avatar" alt="Avatar Image">
+      <img src="COGOLLO-NOT-MYU.png" class="avatar" alt="Avatar Image">
       <h1>Regístrate</h1>
       <form method="POST" id="formRegistro" onsubmit="return verificarPass();">
         <label for="email">Email</label>
