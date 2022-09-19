@@ -44,7 +44,7 @@ if(isset($_POST['registro'])){
     <meta charset="utf-8">
     <title>Regístrate | MYU</title>
     <link rel="stylesheet" href="Registro.css">
-    <link rel="shortcut icon" href="MYU PERFIL.PNG">   
+    <link rel="shortcut icon" href="COGOLLO NOT MYU.png">  
   </head>
   <body>
 

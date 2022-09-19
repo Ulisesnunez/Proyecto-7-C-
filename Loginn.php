@@ -43,7 +43,7 @@ else{
     <meta charset="utf-8">
     <title>Inicio de sesión | MYU</title>
     <link rel="stylesheet" href="Logan.css">
-    <link rel="shortcut icon" href="MYU PERFIL.PNG">   
+    <link rel="shortcut icon" href="COGOLLO NOT MYU.png">
   </head>
   <body>
 
