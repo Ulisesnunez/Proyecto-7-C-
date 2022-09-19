@@ -1,12 +1,9 @@
 <?php
-include("config.php");
-$catalogo = "SELECT FROM catalogo WHERE talle = '6' ";
+include("connect.php");
+$catalogo = "SELECT * FROM catalogo WHERE talle = '6'";
 $resultado = mysqli_query($conex, $catalogo);
-while($row-> mysql_fetch_array($resultado));
-    $producto =$row['producto'];
-    $precio=$row['precio'];
+?>
 
-?> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +52,13 @@ while($row-> mysql_fetch_array($resultado));
 
     <header class="header">
       
-
+       
+    <?php      
+    while($row = $resultado-> fetch_array()){
+      $producto =$row['producto'];
+      $precio=$row['precio'];
+      ?>
+      
       <section class="text-center p__articulo">
         <div class="row py-3 justify-content-around">
           <div class="card m-1 col-md-5 col-lg-3">
@@ -80,144 +83,6 @@ while($row-> mysql_fetch_array($resultado));
             </div>
           </div>
 
-          
-          <div class="card m-1 col-md-5 col-lg-3">
-            <img src="imagenesropa/imagen12.jpeg" class="card-img-top d-block w-100" alt="...">
-            <div class="card-body">
-              <h3 class="card-title"><?php echo $producto ?></h3>
-              <div class="precio"> 
-								<div class="box-precio">
-									<span class="precio2"><?php echo $precio ?></span>
-								</div>
-							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
-              <a href="#" class="btn" id="btn-cat">
-                <img src="carrito.png" alt="">
-              </a>
-            </div>
-          </div>
-
-          <div class="card m-1 col-md-5 col-lg-3">
-            <img src="imagenesropa/imagen11.jpeg" class="card-img-top d-block w-100" alt="...">
-            <div class="card-body">
-              <h3 class="card-title"><?php echo $producto ?></h3>
-              <div class="precio"> 
-								<div class="box-precio">
-									<span class="precio2"><?php echo $precio ?></span>
-								</div>
-							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
-              <a href="#" class="btn" id="btn-cat">
-                <img src="carrito.png" alt="">
-              </a>
-            </div>
-          </div>
-
-          <div class="card m-1 col-md-5 col-lg-3">
-            <img src="imagenesropa/imagen4.jpeg" class="card-img-top d-block w-100" alt="...">
-            <div class="card-body">
-              <h3 class="card-title"><?php echo $producto ?></h3>
-              <div class="precio"> 
-								<div class="box-precio">
-									<span class="precio2"><?php echo $precio ?></span>
-								</div>
-							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
-              <a href="#" class="btn" id="btn-cat">
-                <img src="carrito.png" alt="">
-              </a>
-            </div>
-          </div>
-
-          <div class="card m-1 col-md-5 col-lg-3">
-            <img src="imagenesropa/imagen8.jpeg" class="card-img-top d-block w-100" alt="...">
-            <div class="card-body">
-              <h3 class="card-title">Indumentaria</h3>
-              <div class="precio"> 
-								<div class="box-precio">
-									<span class="precio2">$2500</span>
-								</div>
-							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
-              <a href="#" class="btn" id="btn-cat">
-                <img src="carrito.png" alt="">
-              </a>
-            </div>
-          </div>
-
-          <div class="card m-1 col-md-5 col-lg-3">
-            <img src="imagenesropa/imagen6.jpeg" class="card-img-top d-block w-100" alt="...">
-            <div class="card-body">
-              <h3 class="card-title">Indumentaria</h3>
-              <div class="precio"> 
-								<div class="box-precio">
-									<span class="precio2">$2500</span>
-								</div>
-							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
-              <a href="#" class="btn" id="btn-cat">
-                <img src="carrito.png" alt="">
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </header>
-    <div aria-label="Page navigation example" id="paginas">
-      <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <section id="contact">
-      <h2 class="title">Contacto</h2>
-      <div class="socialmedia">
-          <a href="https://web.whatsapp.com/"><i class='socialmedia__icon bx bxl-whatsapp bx-tada' ></i></a>
-          <a href="https://www.instagram.com/"><i class='socialmedia__icon bx bxl-instagram bx-tada' ></i></a>
-          <a href="https://es-la.facebook.com/"><i class='socialmedia__icon bx bxl-facebook-circle bx-tada' ></i></a>
-      </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
-</html>
+      <?php
+    }
+    ?>

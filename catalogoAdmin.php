@@ -1,11 +1,7 @@
 <?php
-include("config.php");
+include("connect.php");
 $catalogo = "SELECT * FROM catalogo WHERE talle = '6'";
 $resultado = mysqli_query($conex, $catalogo);
-while($row-> mysql_fetch_array($resultado));
-    $nro_producto=$row['nro_producto'];
-    $producto =$row['producto'];
-    $precio=$row['precio'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,37 +51,7 @@ while($row-> mysql_fetch_array($resultado));
     <header class="header">
       <section class="text-center p__articulo">
         <div class="row py-3 justify-content-around">
-    
-    <?php      
-    while($row=mysqli_fetch_assoc($resultado)){
-
-      
-          <div class="card m-1 col-md-5 col-lg-3">
-            <img src="imagenesropa/imagen5.jpeg" class="card-img-top d-block w-100" alt="...">
-            <div class="card-body">
-              <h3 class="card-title">echo $row['producto']</h3>
-              <div class="precio"> 
-								<div class="box-precio">
-									<span class="precio2"> echo $row['precio']</span>
-								</div>
-							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
-                <a href="articulo1.php" class="btn" id="btn-cat">
-                    <img src="settings.svg" alt="" class="ajuste">
-                </a>
-                <a href="#" class="btn" id="btn-cat">
-                    <img src="tacho.svg" alt="" class="ajuste">
-                </a>
-            </div>
-          </div>
-    ?>
-
+   
           <div class="card m-1 col-md-5 col-lg-3" id="div">
             <img src="imagenesropa/imagen5.jpeg" class="card-img-top d-block w-100" alt="...">
             <div class="card-body">
@@ -95,13 +61,6 @@ while($row-> mysql_fetch_array($resultado));
 									<span class="precio2">$2500</span>
 								</div>
 							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
                 <a href="articulo1.php" class="btn" id="btn-cat">
                     <img src="settings.svg" alt="" class="ajuste">
                 </a>
@@ -110,147 +69,32 @@ while($row-> mysql_fetch_array($resultado));
                 </a>
             </div>
           </div>
-
+    
           
-          <div class="card m-1 col-md-5 col-lg-3" id="div">
-            <img src="imagenesropa/imagen12.jpeg" class="card-img-top d-block w-100" alt="...">
-            <div class="card-body">
-              <h3 class="card-title">Remera Juan XXIII</h3>
-              <div class="precio"> 
-								<div class="box-precio">
-									<span class="precio2">$2500</span>
-								</div>
-							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
-                <a href="articulo1.php" class="btn" id="btn-cat">
-                    <img src="settings.svg" alt="" class="ajuste">
-                </a>
-                <a href="#" class="btn" id="btn-cat">
-                    <img src="tacho.svg" alt="" class="ajuste" onClick = "removeCard()">
-                </a>
-            </div>
-          </div>
+      <?php      
+    while($row = $resultado-> fetch_array()){
+      $producto =$row['producto'];
+      $precio=$row['precio'];
+      ?>
 
-          <div class="card m-1 col-md-5 col-lg-3" id="div">
-            <img src="imagenesropa/imagen11.jpeg" class="card-img-top d-block w-100" alt="...">
-            <div class="card-body">
-              <h3 class="card-title">Chomba Juan XXIII</h3>
-              <div class="precio"> 
-								<div class="box-precio">
-									<span class="precio2">$2500</span>
-								</div>
-							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
-                            <a href="articulo1.php" class="btn" id="btn-cat">
-                                <img src="settings.svg" alt="" class="ajuste">
-                            </a>
-                            <a href="#" class="btn" id="btn-cat" onClick = "removeCard()">
-                                <img src="tacho.svg" alt="" class="ajuste">
-                            </a>
-            </div>
-          </div>
-
-          <div class="card m-1 col-md-5 col-lg-3" id="div">
-            <img src="imagenesropa/imagen4.jpeg" class="card-img-top d-block w-100" alt="...">
-            <div class="card-body">
-              <h3 class="card-title">Indumentaria</h3>
-              <div class="precio"> 
-								<div class="box-precio">
-									<span class="precio2">$2500</span>
-								</div>
-							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
-                            <a href="articulo1.php" class="btn" id="btn-cat">
-                                <img src="settings.svg" alt="" class="ajuste">
-                            </a>
-                            <a href="#" class="btn" id="btn-cat">
-                                <img src="tacho.svg" alt="" class="ajuste" onClick = "removeCard()">
-                            </a>
-            </div>
-          </div>
-
-          <div class="card m-1 col-md-5 col-lg-3" id="div">
-            <img src="imagenesropa/imagen8.jpeg" class="card-img-top d-block w-100" alt="...">
-            <div class="card-body">
-              <h3 class="card-title">Indumentaria</h3>
-              <div class="precio"> 
-								<div class="box-precio">
-									<span class="precio2">$2500</span>
-								</div>
-							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
-                            <a href="articulo1.php" class="btn" id="btn-cat">
-                                <img src="settings.svg" alt="" class="ajuste">
-                            </a>
-                            <a href="#" class="btn" id="btn-cat">
-                                <img src="tacho.svg" alt="" class="ajuste" onClick = "removeCard()">
-                            </a>
-            </div>
-          </div>
-
-          <div class="card m-1 col-md-5 col-lg-3" id="div">
-            <img src="imagenesropa/imagen6.jpeg" class="card-img-top d-block w-100" alt="...">
-            <div class="card-body">
-              <h3 class="card-title">Indumentaria</h3>
-              <div class="precio"> 
-								<div class="box-precio">
-									<span class="precio2">$2500</span>
-								</div>
-							</div>
-							<select class="form-select form-select-sm" id="talle" aria-label=".form-select-sm example">
-							  <option selected>Talles:</option>
-							  <option value="1">Small</option>
-							  <option value="2">Medium</option>
-							  <option value="3">Large</option>
-							  <option value="4">XL</option>
-							</select>
-                            <a href="articulo1.php" class="btn" id="btn-cat">
-                                <img src="settings.svg" alt="" class="ajuste">
-                            </a>
-                            <a href="#" class="btn" id="btn-cat">
-                                <img src="tacho.svg" alt="" class="ajuste" onClick = "removeCard()">
-                            </a>
-            </div>
+      <div class="card m-1 col-md-5 col-lg-3">
+      <img src="imagenesropa/imagen5.jpeg" class="card-img-top d-block w-100" alt="...">
+      <div class="card-body">
+        <h3 class="card-title"><?php echo $producto; ?></h3>
+        <div class="precio"> 
+          <div class="box-precio">
+            <span class="precio2"> <?php echo $precio; ?></span>
           </div>
         </div>
-      </section>
-    </header>
-    <a href="agregarCard.php" class="btn" id="btn-cat">
-      <button class="btn btn-cat">Agregar articulo</button>
-  </a>
-    <section id="contact">
-      <h2 class="title">Contacto</h2>
-      <div class="socialmedia">
-          <a href="https://web.whatsapp.com/"><i class='socialmedia__icon bx bxl-whatsapp bx-tada' ></i></a>
-          <a href="https://www.instagram.com/"><i class='socialmedia__icon bx bxl-instagram bx-tada' ></i></a>
-          <a href="https://es-la.facebook.com/"><i class='socialmedia__icon bx bxl-facebook-circle bx-tada' ></i></a>
+          <a href="articulo1.php" class="btn" id="btn-cat">
+              <img src="settings.svg" alt="" class="ajuste">
+          </a>
+          <a href="#" class="btn" id="btn-cat">
+              <img src="tacho.svg" alt="" class="ajuste">
+          </a>
       </div>
-    </section>
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
-</html>
+    </div>
+    <?php
+    } 
+    ?>
+  
