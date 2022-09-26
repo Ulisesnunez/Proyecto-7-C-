@@ -50,7 +50,7 @@ CREATE TABLE `carrito` (
 --
 
 CREATE TABLE `catalogo` (
-  `nro_producto` int(11) NOT NULL,
+  `nro_producto` int(11) AUTO_INCREMENT PRIMARY KEY,
   `producto` varchar(100) DEFAULT NULL,
   `talle` varchar(5) DEFAULT NULL,
   `colegio` varchar(30) DEFAULT NULL,
