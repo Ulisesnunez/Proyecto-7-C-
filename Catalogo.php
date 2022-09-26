@@ -77,7 +77,7 @@ $resultado = mysqli_query($conex, $catalogo);
 							  <option value="3">Large</option>
 							  <option value="4">XL</option>
 							</select>
-              <a href="#" class="btn" id="btn-cat">
+              <a href="ingresoCard.php" class="btn" id="btn-cat">
                 <img src="carrito.png" alt="">
               </a>
             </div>

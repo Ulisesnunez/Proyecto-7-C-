@@ -49,18 +49,100 @@ include("connect.php");
     </div>
 
   <form method= 'post'>
-  <input type="text" name="producto" placeholder="ingrese nombre de producto">
-  <input type="text" name="precio" placeholder="ingrese precio del producto ">
-  <input type="text" name="stock" placeholder="ingrese stock disponible">
-  <input type="text" name="colegio" placeholder="ingrese el colegio correspondiente">
-  <input type= "checkbox" name="6">
-  <input type= "checkbox" name="8">
-  <input type= "checkbox" name="10">
-  <input type= "checkbox" name="12">
-  <input type= "checkbox" name="14">
-  <input type= "checkbox" name="16">
-  <input type="submit" name = "register"> 
-  </form>
+    <form method="post">
+    <section class="row bg">
+      <div class="col-lg-5">
+        <img src="imagenesropa/imagen5.jpeg" alt="" class="cardCat my-3">
+      </div>
+      <div class="col-lg-7 m-auto">
+        <h1 class="titu mt-4">Ingresar nombre del articulo:</h1>
+        <div class="cambiar">
+          <div class="form-floating newtitle m-auto">
+            
+            <input type = "text" name = "producto" placeholder="Nombre del producto" requiere>
+          </div>
+        </div>
+
+
+        <h1 class="mt-3 titu">Ingresar el precio:</h1>
+        <div class="cambiar">
+          <div class="form-floating newtitle m-auto">
+            <input type="text" name="precio" placeholder="Precio del producto" requiere>
+      
+          </div>
+        </div>
+
+        <h1 class="mt-3 titu">Ingresar el stock:</h1>
+        <div class="cambiar">
+          <div class="form-floating newtitle m-auto">
+            <input type="text" name="stock" placeholder="Stock disponible" require>
+          </div>
+        </div>
+
+        <h1 class="mt-3 titu">Ingresar el colegio correspondiente:</h1>
+        <div class="cambiar">
+          <div class="form-floating newtitle m-auto">
+            <input type="text" name="colegio" placeholder="Colegio" require>
+          </div>
+        </div>
+
+        <h2 class="mt-4">Talles</h2>
+        <div class="bg ">
+        <input type= "checkbox" name="6">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle 6
+        </label>
+        <input type= "checkbox" name="8">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle 8
+        </label>
+        <input type= "checkbox" name="10">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle 10
+        </label>
+        <input type= "checkbox" name="12">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle 12
+        </label>
+        <input type= "checkbox" name="14">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle 14
+        </label>
+        <input type= "checkbox" name="16">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle 16
+        </label>
+        <input type= "checkbox" name="s">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle S
+        </label>
+        <input type= "checkbox" name="m">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle M
+        </label>
+        <input type= "checkbox" name="l">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle L
+        </label>
+        <input type= "checkbox" name="xl">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle XL
+        </label>
+        <input type= "checkbox" name="xxl">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle XXL
+        </label>
+        <input type= "checkbox" name="xxxl">
+        <label for="flexCheckChecked" class="form-check-label talle">
+          Talle XXXL
+        </label>
+
+        <input type="submit" name = "register">
+        </div>
+       
+        
+    </div>
+</form>
     <?php
     include("agregarCardIngreso.php");
     ?>
