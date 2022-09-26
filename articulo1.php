@@ -44,6 +44,7 @@
           </nav>
     </div>
 
+    <form method="post">
     <section class="row bg">
       <div class="col-lg-5">
         <img src="imagenesropa/imagen5.jpeg" alt="" class="cardCat my-3">
@@ -52,8 +53,7 @@
         <h1>Cambiar nombre:</h1>
         <div class="cambiar">
           <div class="form-floating newtitle m-auto">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">Nuevo titulo del articulo</label>
+            <input type="text" name="nombre" placeholder="nuevo nombre">
           </div>
         </div>
 
@@ -61,15 +61,25 @@
         <h1 class="mt-3">Cambiar precio:</h1>
         <div class="cambiar">
           <div class="form-floating newtitle m-auto">
-            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-            <label for="floatingTextarea">Nuevo precio</label>
+          <input type= "text" name="precio" placeholder="nuevo precio">
           </div>
         </div>
-
-        <button class="tilde"><img src="tilde.svg" alt="" id="tilde"></button>
+        <br>
+        <input type="submit" name="cambiar">
         
       </div>
     </section>
+    </form>
+
+    <?php
+     $producto = $_POST['nombre'];
+     $precio = $_POST['precio'];
+
+     if(isset($_POST['cambiar']))
+     {
+        
+     }
+    ?>
 
     <section id="contact">
         <h2 class="title">Contacto</h2>

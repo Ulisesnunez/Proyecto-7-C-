@@ -48,7 +48,6 @@ include("connect.php");
           </nav>
     </div>
 
-  <form method= 'post'>
     <form method="post">
     <section class="row bg">
       <div class="col-lg-5">
@@ -87,57 +86,82 @@ include("connect.php");
         </div>
 
         <h2 class="mt-4">Talles</h2>
-        <div class="bg ">
+        <div class="talles row justify-content-evenly">
+        <div class="col-2"> 
         <input type= "checkbox" name="6">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle 6
         </label>
+        </div>
+        <div class="col-2">
         <input type= "checkbox" name="8">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle 8
         </label>
+        </div>
+        <div class="col-2">
         <input type= "checkbox" name="10">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle 10
         </label>
+        </div>
+        <div class="col-2">
         <input type= "checkbox" name="12">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle 12
         </label>
+        </div>
+        <div class="col-2">
         <input type= "checkbox" name="14">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle 14
         </label>
+        </div>
+        <div class="col-2">
         <input type= "checkbox" name="16">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle 16
         </label>
+        </div>
+        <div class="col-2">
         <input type= "checkbox" name="s">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle S
         </label>
+        </div>
+        <div class="col-2">
         <input type= "checkbox" name="m">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle M
         </label>
+        </div>
+        <div class="col-2">
         <input type= "checkbox" name="l">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle L
         </label>
+        </div>
+        <div class="col-2">
         <input type= "checkbox" name="xl">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle XL
         </label>
+        </div>
+        <div class="col-2">
         <input type= "checkbox" name="xxl">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle XXL
         </label>
+        </div>
+        <div class="col-2">
         <input type= "checkbox" name="xxxl">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle XXXL
         </label>
-
+        </div>
+        <div class="col-2 mt-3">
         <input type="submit" name = "register">
+        </div>
         </div>
        
         

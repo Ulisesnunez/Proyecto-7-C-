@@ -48,32 +48,32 @@ if(isset($_POST['register'])){
         }
 
         if(isset($_POST['s'])){
-            $consulta = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','s','$colegio','$stock','$precio')";
+            $consulta7 = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','s','$colegio','$stock','$precio')";
             
         }
 
         if(isset($_POST['m'])){
-            $consulta = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','m','$colegio','$stock','$precio')";
+            $consulta8 = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','m','$colegio','$stock','$precio')";
             
         }
 
         if(isset($_POST['l'])){
-            $consulta = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','l','$colegio','$stock','$precio')";
+            $consulta9 = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','l','$colegio','$stock','$precio')";
             
         }
 
         if(isset($_POST['xl'])){
-            $consulta = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','xl','$colegio','$stock','$precio')";
+            $consulta10 = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','xl','$colegio','$stock','$precio')";
             
         }
 
         if(isset($_POST['xxl'])){
-            $consulta = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','xxl','$colegio','$stock','$precio')";
+            $consulta11 = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','xxl','$colegio','$stock','$precio')";
             
         }
 
         if(isset($_POST['xxxl'])){
-            $consulta = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','xxxl','$colegio','$stock','$precio')";
+            $consulta12 = "INSERT INTO catalogo (producto, talle, colegio, stock, precio) VALUES ('$producto','xxxl','$colegio','$stock','$precio')";
             
         }
 
@@ -84,8 +84,14 @@ if(isset($_POST['register'])){
         $resultado4 = mysqli_query($conex,$consulta4);
         $resultado5 = mysqli_query($conex,$consulta5);
         $resultado6 = mysqli_query($conex,$consulta6);
+        $resultado7 = mysqli_query($conex,$consulta7);
+        $resultado8 = mysqli_query($conex,$consulta8);
+        $resultado9 = mysqli_query($conex,$consulta9);
+        $resultado10 = mysqli_query($conex,$consulta10);
+        $resultado11 = mysqli_query($conex,$consulta11);
+        $resultado12 = mysqli_query($conex,$consulta12);
     
-        if($resultado || $resultado2 || $resultado3 || $resultado4 || $resultado5 || $resultado6){
+        if($resultado || $resultado2 || $resultado3 || $resultado4 || $resultado5 || $resultado6 || $resultado7 || $resultado8 || $resultado9 || $resultado10 || $resultado11 || $resultado12 ){
 ?>
         <h3> consulta realizada </h3>
 <?php
