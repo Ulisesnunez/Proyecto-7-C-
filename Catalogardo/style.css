@@ -14,7 +14,7 @@ header{
     position: fixed;
     width: 100%;
     margin-top: -0.3em;
-    z-index: 99;
+    z-index: 1;
 }
 
 nav{
@@ -126,8 +126,8 @@ nav{
 }
 
 .cart:hover{
-    margin-bottom: 10.625em;
-    transition-duration: .5s;
+    margin-bottom: 1em;
+    transition-duration: .4s;
 }
 
 .products{
