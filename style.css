@@ -326,16 +326,6 @@ footer{
     width: 10%;
 }
 
-#tilde{
-    height: 4em;
-}
-.tilde{
-    height: 4em;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    background-color: #563d35;
-}
-
 .newtitle{
     margin-bottom: 1em;
     font-size: 1em;

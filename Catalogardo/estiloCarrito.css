@@ -74,6 +74,12 @@ nav{
     font-style: italic;
 }
 
+#btn-cat{
+    height: auto;
+    width: 10%;
+    margin: auto;
+}
+
 .container{
     max-width: 75em;
     text-align: center;
@@ -129,6 +135,7 @@ nav{
     margin-bottom: 1em;
     transition-duration: .4s;
 }
+
 
 .products{
     padding-top: 7em;
