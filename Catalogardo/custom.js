@@ -9,7 +9,7 @@ let buyThings = [];
 let totalCard = 0;
 let countProduct = 0;
 
-//functions
+
 loadEventListenrs();
 function loadEventListenrs(){
     allContainerCart.addEventListener('click', addProduct);
@@ -79,9 +79,65 @@ function readTheContent(product){
     //console.log(infoProduct);
 }
 
+
+
+
+    
+
 function loadHtml(){
     clearHtml();
     buyThings.forEach(product => {
+
+        let talle = document.getElementById("talle");
+        let mostrar = 0;
+        if (talle.value == 1) {
+            mostrar="6";
+        }
+        else{
+            if (talle.value == 2) {
+                mostrar="8";
+            }   
+        }
+        if (talle.value == 3) {
+            mostrar="10";
+        }
+        else{
+            if (talle.value == 4) {
+                mostrar="12";
+            }   
+        }
+        if (talle.value == 5) {
+            mostrar="14";
+        }
+        else{
+            if (talle.value == 6) {
+                mostrar="16";
+            }   
+        }
+        if (talle.value == 7) {
+            mostrar="S";
+        }
+        else{
+            if (talle.value == 8) {
+                mostrar="M";
+            }   
+        }
+        if (talle.value == 9) {
+            mostrar="L";
+        }
+        else{
+            if (talle.value == 10) {
+                mostrar="XL";
+            }   
+        }
+        if (talle.value == 11) {
+            mostrar="XXL";
+        }
+        else{
+            if (talle.value == 12) {
+                mostrar="XXXL";
+            }
+        }
         const {image, title, price, amount, id} = product;
         const row = document.createElement('div');
         row.classList.add('item');
@@ -90,6 +146,7 @@ function loadHtml(){
             <div class="item-content">
                 <h5>${title}</h5>
                 <h5 class="cart-price">${price}$</h5>
+                <h5>Talle: ${mostrar}</h5>
                 <h6>Amount: ${amount}</h6>
             </div>
             <span class="delete-product" data-id="${id}">X</span>
