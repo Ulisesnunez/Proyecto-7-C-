@@ -97,5 +97,5 @@ $resultado = mysqli_query($conex, $catalogo);
     </div>
     <?php
     } 
-    ?>
-  
+    ?> 
+    

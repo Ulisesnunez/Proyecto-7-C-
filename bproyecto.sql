@@ -144,7 +144,7 @@ INSERT INTO `usuarios` (`ID`, `username`, `pass`, `datos_pers`) VALUES
 (2, 'pepe juan', '$2y$10$mhobYt4vU5OWXyubcgDFE.nUVPPacRCv0HOGUM1qnZ1fAeewJ6WFy', '');
 
 --
--- Índices para tablas volcadas
+-- Índices para tablas volca+das
 --
 
 --

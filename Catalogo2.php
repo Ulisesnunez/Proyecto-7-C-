@@ -1,3 +1,9 @@
+<?php
+include("connect.php");
+$catalogo = "SELECT * FROM catalogo WHERE talle = '6'";
+$resultado = mysqli_query($conex, $catalogo);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,14 +67,24 @@
     </header>
     <section class="container">
         <div class="products">
+           
             <!-- empieza card -->
-            <div class="carts">
-                <div>
-                    <img src="./images/imagenesropa/imagen1.jpeg" alt="">
-                    <p><span>9000</span>$</p>
+
+            <?php
+            while($row = $resultado -> fetch_array()){
+                $nro_producto = $row['nro_producto'];
+                $nombre = $row['producto'];
+                $colegio = $row['colegio'];
+                $stock = $row['stock'];
+                $precio = $row['precio'];
+            ?>
+                <div class="carts">
+                    <div>
+                        <img src="imagenesropa/imagen1.jpeg" alt="">
+                        <p><span><?php echo $precio; ?></span>$</p>
                 </div>
-                <p class="title mb-1">Conjunto Invierno</p>
-                <p class="title mb-1">Juan XXIII</p>
+                <p class="title mb-1"><?php echo $nombre; ?></p>
+                <p class="title mb-1"><?php echo $colegio; ?></p>
                 <select class="form-select form-select-sm mb-4" aria-label=".form-select-sm example" id="talle">
                     <option selected>Talles</option>
                     <option value="1">6</option>
@@ -83,81 +99,21 @@
                     <option value="10">XL</option>
                     <option value="11">XXL</option>
                     <option value="12">XXXL</option>
-                  </select>
+                </select>
                 <a href="" data-id="1"  class="btn-add-cart mt-4">Agregar al carrito</a>
             </div>
-            <!-- termina card -->
-            <div class="carts">
-                <div>
-                    <img src="./images/imagenesropa/imagen4.jpeg" alt="">
-                    <p><span>8000</span>$</p>
-                </div>
-                <p class="title mb-1">Conjunto Verano</p>
-                <p class="title">Juan XXIII</p>
-                <a href="" class="btn-add-cart" data-id="2">Agregar al Carrito</a>
-            </div>
-            <div class="carts">
-                <div>
-                    <img src="./images/imagenesropa/imagen6.jpeg" alt="">
-                    <p><span>4000</span>$</p>
-                </div>
-                <p class="title mb-1">Campera Verano</p>
-                <p class="title">Juan XXIII</p>
-                <a href="" data-id="3" class="btn-add-cart">Agregar al Carrito</a>
-            </div>
-            <div class="carts">
-                <div>
-                    <img src="./images/imagenesropa/imagen7.jpeg" alt="">
-                    <p><span>4500</span>$</p>
-                </div>
-                <p class="title mb-1">Campera Invierno</p>
-                <p class="title">Juan XXIII</p>
-                <a href="" data-id="4" class="btn-add-cart">Agregar al Carrito</a>
-            </div>
-            <div class="carts">
-                <div>
-                    <img src="./images/imagenesropa/imagen10.jpeg" alt="">
-                    <p><span>3500</span>$</p>
-                </div>
-                <p class="title mb-1">Remera</p>
-                <p class="title">Juan XXIII</p>
-                <a href="" data-id="5" class="btn-add-cart">Agregar al Carrito</a>
-            </div>
-            <div class="carts">
-                <div>
-                    <img src="./images/imagenesropa/imagen3.jpeg" alt="">
-                    <p><span>4250</span>$</p>
-                </div>
-                <p class="title mb-1">Pantalon Verano</p>
-                <p class="title">Juan XXIII</p>
-                <a href="" data-id="6" class="btn-add-cart">Agregar al Carrito</a>
-            </div>
-            <div class="carts">
-                <div>
-                    <img src="./images/imagenesropa/imagen12.jpeg" alt="">
-                    <p><span>4550</span>$</p>
-                </div>
-                <p class="title mb-1">Pantalon Invierno</p>
-                <p class="title">Juan XXIII</p>
-                <a href="" data-id="7" class="btn-add-cart">Agregar al Carrito</a>
-            </div>
-            <div class="carts">
-                <div>
-                    <img src="./images/imagenesropa/imagen8.jpeg" alt="">
-                    <p><span>3000</span>$</p>
-                </div>
-                <p class="title mb-1">Chomba</p>
-                <p class="title">Juan XXIII</p>
-                <a href="" data-id="8" class="btn-add-cart">Agregar al Carrito</a>
-            </div>
-            </div>
-    </section>
+        <?php
+        }        
+        ?>
+                                                 
+        <!-- termina  card -->
 
-    <footer id="contact">
+
+        <footer id="contact">
         <h2 class="titles">Contacto</h2>
         <div class="socialmedia">
             <a href="https://web.whatsapp.com/"><i class='socialmedia__icon bx bxl-whatsapp bx-tada' ></i></a>
-            <a href="https://www.instagram.com/"><i class='socialmedia__icon bx bxl-instagram bx-tada' ></i></a>
+            <a href=  "https://www.instagram.com/"><i class='socialmedia__icon bx bxl-instagram bx-tada' ></i></a>
             <a href="https://es-la.facebook.com/"><i class='socialmedia__icon bx bxl-facebook-circle bx-tada' ></i></a>
         </div>
     </footer>
