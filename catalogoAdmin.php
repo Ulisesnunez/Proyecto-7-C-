@@ -87,7 +87,8 @@ $resultado = mysqli_query($conex, $catalogo);
             <span class="precio2"> <?php echo $precio; ?></span>
           </div>
         </div>
-          <a name="modificar" href="articulo1.php" class="btn" id="btn-cat">
+        <a name="modificar" href="articulo1.php" class="btn" id="btn-cat">
+            <!-- <input method = "post" type="submit" name= <?php "$producto"?> href="articulo1.php"> -->
               <img src="settings.svg" alt="" class="ajuste">
           </a>
           <a href="#" class="btn" id="btn-cat">

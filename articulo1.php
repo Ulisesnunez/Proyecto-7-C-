@@ -1,3 +1,11 @@
+<?php
+
+    include("connect.php");
+    $catalogo = "SELECT * FROM catalogo WHERE talle = 6";
+    $resultado = mysqli_query($conex,$catalogo);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,16 +52,48 @@
           </nav>
     </div>
 
-    <form method="post">
     <section class="row bg">
       <div class="col-lg-5">
         <img src="imagenesropa/imagen5.jpeg" alt="" class="cardCat my-3">
       </div>
       <div class="col-lg-7 m-auto">
+        
+        <!-- empieza -->
+        <form action="articulo1.php" method="post">
+        <!-- <option selected >Producto</option> -->
+        <select  name="talle" class="form-select form-select-sm mb-4" aria-label=".form-select-sm example">
+        
+          <?php
+      
+      while($row = $resultado -> fetch_array()){
+        $nombre = $row['producto'];
+        
+
+        ?>
+          <option value="<?php echo $nombre?>"><?php echo $nombre; ?></option>
+          
+        <?php
+
+      }
+
+        $seleccionado = $_REQUEST["talle"];
+        ?>
+      </select>
+      
+      <!-- termina -->
+  
+        
         <h1>Cambiar nombre:</h1>
         <div class="cambiar">
           <div class="form-floating newtitle m-auto">
             <input type="text" name="nombre" placeholder="nuevo nombre">
+          </div>
+        </div>
+
+        <h1>Cambiar colegio:</h1>
+        <div class="cambiar">
+          <div class="form-floating newtitle m-auto">
+            <input type="text" name="colegio" placeholder="nuevo nombre">
           </div>
         </div>
 
@@ -66,20 +106,38 @@
         </div>
         <br>
         <input type="submit" name="cambiar">
+      </form>
+
+      <?php
+      
+        if(isset($_POST['cambiar']) && isset($_POST['talle'])){
+
+          $producto = $_POST['nombre'];
+          $colegio = $_POST['colegio'];
+          $precio = $_POST['precio'];
+
+          $consultaUpdate = "UPDATE catalogo SET producto = $producto, colegio = $colegio, precio = $precio WHERE producto = 'Chomba' ";
+          $cambio = mysqli_query($conex,$consultaUpdate);
+
+          if($cambio){
+
+            echo "cambio realizado";
+  
+           }
+           else
+           {
+             echo "la consulta no ha sido realizada";
+
+             //echo $_REQUEST["talle"]
+           }
+
+        }
+
+      ?>
         
       </div>
     </section>
-    </form>
-
-    <?php
-     $producto = $_POST['nombre'];
-     $precio = $_POST['precio'];
-
-     if(isset($_POST['cambiar']))
-     {
-        
-     }
-    ?>
+  
 
     <section id="contact">
         <h2 class="title">Contacto</h2>

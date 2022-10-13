@@ -24,7 +24,7 @@
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <a href="./Catalogardo/Catalogo2.html">Catalogo</a>
+                    <a href="Catalogo2.php">Catalogo</a>
                   </li>
                   <li class="nav-item">
                     <a href="#contact">Contacto</a>
