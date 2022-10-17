@@ -70,19 +70,19 @@
         
 
         ?>
-          <option value="<?php echo $nombre?>"><?php echo $nombre; ?></option>
+          <option value="<?php echo $nombre ?>"><?php echo $nombre ?></option>
           
         <?php
 
       }
 
-        $seleccionado = $_REQUEST["talle"];
         ?>
       </select>
+
       
       <!-- termina -->
   
-        
+      
         <h1>Cambiar nombre:</h1>
         <div class="cambiar">
           <div class="form-floating newtitle m-auto">
@@ -105,18 +105,21 @@
           </div>
         </div>
         <br>
-        <input type="submit" name="cambiar">
+        <input type="submit" value="cambiar">
       </form>
 
       <?php
       
-        if(isset($_POST['cambiar']) && isset($_POST['talle'])){
+        if(isset($_POST['talle'])){
 
-          $producto = $_POST['nombre'];
+          //echo "holaaaa tatiii!!!!!!";
+
+          $producto = $_POST['talle'];
+          $nombre = $_POST['nombre'];
           $colegio = $_POST['colegio'];
           $precio = $_POST['precio'];
-
-          $consultaUpdate = "UPDATE catalogo SET producto = $producto, colegio = $colegio, precio = $precio WHERE producto = 'Chomba' ";
+          
+          $consultaUpdate = 'UPDATE catalogo SET producto = \''.$nombre.'\', colegio = \''.$colegio.'\', precio = \''.$precio.'\' WHERE producto = \''.$producto.'\'';
           $cambio = mysqli_query($conex,$consultaUpdate);
 
           if($cambio){
@@ -126,9 +129,9 @@
            }
            else
            {
-             echo "la consulta no ha sido realizada";
+             echo "el cambio no ha sido realizada";
 
-             //echo $_REQUEST["talle"]
+            
            }
 
         }
