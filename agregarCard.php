@@ -51,7 +51,10 @@ include("connect.php");
     <form method="post">
     <section class="row bg">
       <div class="col-lg-5">
-        <img src="imagenesropa/imagen5.jpeg" alt="" class="cardCat my-3">
+        <img src="myu.png" alt="" class="cardCat my-3">
+        <div class="input-group mb-3">
+          <input type="file" class="form-control" id="inputGroupFile02">
+        </div>
       </div>
       <div class="col-lg-7 m-auto">
         <h1 class="titu mt-4">Ingresar nombre del articulo:</h1>

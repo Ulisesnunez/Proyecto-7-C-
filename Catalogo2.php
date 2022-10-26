@@ -53,7 +53,7 @@ $resultado = mysqli_query($conex, $catalogo);
 <header>
         <div class="header-section container">
             <div>
-                <img onmouseover="showCart(this)" class="cart" src="./images/cart.png" alt="">
+                <img onmouseover="showCart(this)" class="cart" src="cart.png" alt="">
                 <p class="count-product">0</p>
             </div>
             <div class="cart-products" id="products-id">
