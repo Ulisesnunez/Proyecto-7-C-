@@ -1,16 +1,23 @@
 <?php
 
     include("connect.php");
-    $num="SELECT count(*) FROM catalogo";
+    $num="SELECT nro_producto FROM catalogo ORDER BY nro_producto DESC";
     $ero = mysqli_query($conex,$num);
-    for($i=0;$i>$ero;$i++)
+    $fila2 = $ero -> fetch_array();
+    $a = 0;
+    $i = 0;
+    for($x=0;$x < $fila2[0];$x++)
     {
-        $catalogo = "SELECT nombre FROM catalogo WHERE nro_producto=$i";
-        $resultado = mysqli_query($conex,$catalogo);
-        $row = $resultado -> fetch_array();
-        echo $resultado;
+        $ta="SELECT producto FROM catalogo WHERE nro_producto=$x and producto != $a";
+        $lle=mysqli_query($conex,$ta);
+        if(empty($lle) == false)
+        {
+            $fila3[$i] = $lle -> fetch_array();
+            $a = $fila3[$i];
+            $i +1;
+        }
     }
-
+    
 
 ?>
 
@@ -74,12 +81,11 @@
         
           <?php
       
-      while($row = $resultado -> fetch_array()){
-        $nombre = $row['producto'];
-        
+     foreach($fila3)
+     {
 
         ?>
-          <option value="<?php echo $nombre ?>"><?php echo $nombre ?></option>
+          <option value="<?php echo $fila3 ?>"><?php echo $fila3 ?></option>
           
         <?php
 
