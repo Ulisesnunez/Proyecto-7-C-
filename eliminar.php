@@ -4,17 +4,18 @@
     $num="SELECT nro_producto FROM catalogo ORDER BY nro_producto DESC";
     $ero = mysqli_query($conex,$num);
     $fila2 = $ero -> fetch_array();
-    $a = 0;
+    $a = 1;
     $i = 0;
-    for($x=0;$x < $fila2[0];$x++)
+    for($x = 1 ; $x <= $fila2[0] ; $x++)
     {
-        $ta="SELECT producto FROM catalogo WHERE nro_producto=$x and producto != $a";
-        $lle=mysqli_query($conex,$ta);
-        if(empty($lle) == false)
+        $ta="SELECT producto FROM catalogo WHERE nro_producto = $x  ";
+        $lle=$conex -> query($ta);
+        $b = $lle -> fetch_array();
+        if($b !== $a)
         {
-            $fila3[$i] = $lle -> fetch_array();
-            $a = $fila3[$i];
-            $i +1;
+            $fila3[$i] = $b;
+            $a = $b;
+            $i ++;
         }
     }
     
@@ -74,23 +75,19 @@
       <div class="col-lg-7 m-auto">
         
         <!-- empieza -->
-        <form action="articulo1.php" method="post">
+        <form action="eliminar.php" method="post">
         <!-- <option selected >Producto</option> -->
         <h1>Elija el producto a eliminar</h1>
         <select  name="talle" class="form-select form-select-sm mb-4" aria-label=".form-select-sm example">
         
           <?php
-      
-     foreach($fila3)
-     {
-
-        ?>
-          <option value="<?php echo $fila3 ?>"><?php echo $fila3 ?></option>
+          for($y = 0; $y < $i; $y++)
+          {
+            ?>
+          <option value="<?php echo $fila3[$y][0] ?>"><?php echo $fila3[$y][0] ?></option>
           
         <?php
-
-      }
-
+          }
         ?>
       </select>
 

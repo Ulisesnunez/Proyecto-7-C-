@@ -1,12 +1,30 @@
 <?php
 include("connect.php");
-$catalogo = "SELECT * FROM catalogo WHERE talle = '6'";
-$resultado = mysqli_query($conex, $catalogo);
+    $num="SELECT nro_producto FROM catalogo ORDER BY nro_producto DESC";
+    $ero = mysqli_query($conex,$num);
+    $fila2 = $ero -> fetch_array();
+    $a = 1;
+    $i = 0;
+    for($x = 1 ; $x <= $fila2[0] ; $x++)
+    {
+        $ta="SELECT * FROM catalogo WHERE nro_producto = $x";
+        $lle=$conex -> query($ta);
+        $b = $lle -> fetch_array();
+        if(empty($b[1]) == false)
+        {
+          if($b[1] !== $a)
+          {
+              $fila3[$i] = $b;
+              $a = $b[1];
+              $i ++;
+          }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,18 +82,19 @@ $resultado = mysqli_query($conex, $catalogo);
                 <a class="btn btn-dark" href="https://www.mercadopago.com.ar/" role="button">Pague Aquí</a>
             </div>
         </div>
-    </header>
+    </header> -->
     <section class="container">
         <div class="products">
             <!-- empieza card -->
 
             <?php
-            while($row = $resultado -> fetch_array()){
-                $nro_producto = $row['nro_producto'];
-                $nombre = $row['producto'];
-                $colegio = $row['colegio'];
-                $stock = $row['stock'];
-                $precio = $row['precio'];
+            for($y = 0; $y < $i; $y++)
+            {
+                $nro_producto = $fila3[$y]['nro_producto'];
+                $nombre = $fila3[$y]['producto'];
+                $colegio = $fila3[$y]['colegio'];
+                $stock = $fila3[$y]['stock'];
+                $precio = $fila3[$y]['precio'];
             ?>
                 <div class="carts">
                     <div>
@@ -83,21 +102,27 @@ $resultado = mysqli_query($conex, $catalogo);
                         <p><span><?php echo $precio; ?></span>$</p>
                 </div>
                 <p class="title mb-1"><?php echo $nombre; ?></p>
-                <p class="title mb-1"><?php echo $colegio; ?></p>
-                <select class="form-select form-select-sm mb-4" aria-label=".form-select-sm example" id="talle">
-                    <option selected>Talles</option>
-                    <option value="1">6</option>
-                    <option value="2">8</option>
-                    <option value="3">10</option>
-                    <option value="4">12</option>
-                    <option value="5">14</option>
-                    <option value="6">16</option>
-                    <option value="7">S</option>
-                    <option value="8">M</option>
-                    <option value="9">L</option>
-                    <option value="10">XL</option>
-                    <option value="11">XXL</option>
-                    <option value="12">XXXL</option>
+                <p class="title mb-1">Escuela:<?php echo $colegio; ?></p>
+                  <?php
+                  $hola = "SELECT count(*) FROM catalogo WHERE producto = '$nombre'";
+                  $chau= $conex -> query($hola);
+                  $h = 0;
+                  echo "holaaaaaaaaaa";
+                  $c2 = $chau -> fetch_array();
+                  echo $c2[0];
+                  for($z = 1; $z <= $c2[0]; $z++)
+                  {
+                    $hola2 = "SELECT talles FROM catalogo WHERE producto = '$nombre' and talles > '$h' order by talles asc";
+                    $chau2 = $conex -> query($hola2);
+                    $c = $chau2 -> fetch_array();
+                  ?>
+                  <select class="form-select form-select-sm mb-4" aria-label=".form-select-sm example" id="talle">
+                  <option selected>Talles</option>
+                      <option value="<?php echo $z ?>"><?php echo $c[0] ?></option>
+                    <?php
+                    $h = $c[0] ;
+                  }
+                  ?>
                 </select>
                 <a href="" data-id="1"  class="btn-add-cart mt-4">Agregar al carrito</a>
             </div>
