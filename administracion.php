@@ -47,27 +47,26 @@
 
     <section class="contenido sau"> 
 
-        <h2 class="title">SOBRE MYU</h2>
-        <p>MYU es un pequeño local de Indumentaria escolar.</p>
+        <h2 class="title">MYU</h2>
         
         <div class="box-container">
-            <div class="box">
-                <i class='bx bx-package'></i>
-                <h3>Envíos</h3>
-                <p>Compras Online, te lo llevamos.
-                    Conoce más de nuestra política de envíos.</p>
+            <div class="boxAdmin">
+                <h3>Agregar un producto</h3>
+                <a href="agregarCard.php" class="btn" id="btn-cat">
+                    <img src="agregar.svg" alt="" class="ajuste">
+                </a>
             </div>
-            <div class="box">
-                <i class='bx bx-shopping-bag' ></i>
-                <h3>Medios de pago</h3>
-                <p>Crédito, Debido, Efectivo, y mucho más.
-                    Conoce todos los medios de pago.</p>
+            <div class="boxAdmin">
+                <h3>Modificar un producto</h3>
+                <a href="articulo1.php" class="btn" id="btn-cat">
+                    <img src="settings.svg" alt="" class="ajuste">
+                </a>
             </div>
-            <div class="box">
-                <i class='bx bx-purchase-tag' ></i>
-                <h3>Industria Argentina</h3>
-                <p>Todos nuestros productos son diseñados
-                    y fabricados en Argentina.</p>
+            <div class="boxAdmin">
+                <h3>Eliminar un producto</h3>
+                <a href="eliminar.php" class="btn" id="btn-cat">
+                    <img src="tacho.svg" alt="" class="ajuste" onClick = "removeCard()">
+                </a>
             </div>
         </div>
 

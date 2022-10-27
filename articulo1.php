@@ -54,7 +54,7 @@
 
     <section class="row bg">
       <div class="col-lg-5">
-        <img src="imagenesropa/imagen5.jpeg" alt="" class="cardCat my-3">
+        <img src="myu.png" alt="" class="cardCat my-3">
       </div>
       <div class="col-lg-7 m-auto">
         

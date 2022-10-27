@@ -128,8 +128,7 @@ include("connect.php");
             </div>
         <?php
         }        
-        ?>
-                                                 
+        ?>                                
         <!-- termina  card -->
 
 
