@@ -67,7 +67,7 @@ include("connect.php");
         </div>
       </nav>
 </div>    
-
+<!-- empiza carrito -->
 <header>
         <div class="header-section container">
             <div>
@@ -82,9 +82,11 @@ include("connect.php");
                 <a class="btn btn-dark" href="https://www.mercadopago.com.ar/" role="button">Pague Aquí</a>
             </div>
         </div>
+    <!-- termina carrito -->
     </header>
     <section class="container">
         <div class="products">
+        
             <!-- empieza card -->
 
             <?php

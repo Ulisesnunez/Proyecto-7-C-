@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="owl.theme.default.min.css">		
 
 </head>
-<body style="background-color:#fff4e6;">
+<body>
     <div class="head sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-nav">
             <div class="container-fluid">
@@ -24,7 +24,7 @@
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <a href="Catalogo.php">Catalogo</a>
+                    <a href="Catalogo2.php">Catalogo</a>
                   </li>
                   <li class="nav-item">
                     <a href="#contact">Contacto</a>
@@ -45,15 +45,32 @@
           </nav>
     </div>
 
+    <section class="contenido sau"> 
 
-   <footer>
+        <h2 class="title">Informes</h2>
+        
+        <div class="box-containerInforme">
+            <div class="boxAdmin" id="boxInforme">
+                
+            </div>
+            <div class="boxAdmin" id="boxInforme">
+                
+            </div>
+            <div class="boxAdmin" id="boxInforme">
+                
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contact">
         <h2 class="title">Contacto</h2>
         <div class="socialmedia">
             <a href="https://web.whatsapp.com/"><i class='socialmedia__icon bx bxl-whatsapp bx-tada' ></i></a>
             <a href="https://www.instagram.com/"><i class='socialmedia__icon bx bxl-instagram bx-tada' ></i></a>
             <a href="https://es-la.facebook.com/"><i class='socialmedia__icon bx bxl-facebook-circle bx-tada' ></i></a>
         </div>
-      </footer>
+    </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="jquery.min.js"></script>
     <script src="owl.carousel.min.js"></script>

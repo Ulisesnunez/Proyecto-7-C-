@@ -56,6 +56,19 @@ h3{
     color: 	#fff4e6;
 }
 
+.box-containerInforme{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+#boxInforme{
+    height: 28em;
+    width: 24em;
+    
+}
+
 nav{
     font-family: 'Mukta', sans-serif;
     background-color: #fff4e6;
