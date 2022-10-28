@@ -60,8 +60,8 @@ include("connect.php");
         <h1 class="titu mt-4">Ingresar nombre del articulo:</h1>
         <div class="cambiar">
           <div class="form-floating newtitle m-auto">
-            
-            <input type = "text" name = "producto" placeholder="Nombre del producto" requiere>
+            <input type = "text" class="form-control" id="floatingInput" name="producto" placeholder="Nombre del producto" requiere>
+            <label for="floatingInput">Nombre del producto</label>
           </div>
         </div>
 
@@ -69,7 +69,8 @@ include("connect.php");
         <h1 class="mt-3 titu">Ingresar el precio:</h1>
         <div class="cambiar">
           <div class="form-floating newtitle m-auto">
-            <input type="text" name="precio" placeholder="Precio del producto" requiere>
+            <input type="text" class="form-control" id="floatingInput" name="precio" placeholder="Precio del producto" requiere>
+            <label for="floatingInput">Precio del producto</label>
       
           </div>
         </div>
@@ -77,21 +78,23 @@ include("connect.php");
         <h1 class="mt-3 titu">Ingresar el stock:</h1>
         <div class="cambiar">
           <div class="form-floating newtitle m-auto">
-            <input type="text" name="stock" placeholder="Stock disponible" require>
+            <input type="text" class="form-control" id="floatingInput" name="stock" placeholder="Stock disponible" require>
+            <label for="floatingInput">Stock disponible</label>
           </div>
         </div>
 
         <h1 class="mt-3 titu">Ingresar el colegio correspondiente:</h1>
         <div class="cambiar">
           <div class="form-floating newtitle m-auto">
-            <input type="text" name="colegio" placeholder="Colegio" require>
+            <input type="text" class="form-control" id="floatingInput" name="colegio" placeholder="Colegio" require>
+            <label for="floatingInput">Colegio</label>
           </div>
         </div>
 
         <h2 class="mt-4">Talles</h2>
         <div class="talles row justify-content-evenly">
         <div class="col-2"> 
-        <input type= "checkbox" name="06">
+        <input type= "checkbox" id="cuadradito" name="06">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle 6
         </label>
@@ -163,7 +166,7 @@ include("connect.php");
         </label>
         </div>
         <div class="col-2 mt-3">
-        <input type="submit" name = "register">
+        <input type="submit" id="bonton" class="btn btn-outline-primary" name = "register">
         </div>
         </div>
        

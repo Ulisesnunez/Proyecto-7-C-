@@ -1,9 +1,7 @@
 <?php
 include("connect.php");
 
-if($conex){
-    echo "conectado brooo!!!!!!";
-}
+
 
 
 if(isset($_POST['register'])){

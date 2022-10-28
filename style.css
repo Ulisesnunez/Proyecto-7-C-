@@ -102,7 +102,19 @@ nav{
 
 
 
+#floatingInput{
+    background-color: #fff4e6;
+}
 
+#bonton{
+    color: #fff4e6;
+    border: 1px solid #fff4e6;
+    margin-bottom: 2em;
+}
+#bonton:hover{
+    color: #2b1e1a;
+    background-color: #fff4e6;
+}
 
 #drop1{
     background-color: #563d35;
@@ -329,10 +341,20 @@ footer{
         .precio .precio2 {
           font-size: 3rem; } }
 
-#talle {
-    color: #563d35;
+.talle {
+    color: #fff4e6;
     margin-bottom: 1em;
     font-size: 1em; 
+}
+
+#cuadradito{
+    color: #fff4e6;
+    background-color: #fff4e6;
+}
+
+#select{
+    color: #101010;
+    background-color: #fff4e6;
 }
 
 #talles{

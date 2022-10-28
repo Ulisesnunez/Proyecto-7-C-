@@ -61,7 +61,7 @@
         <!-- empieza -->
         <form action="articulo1.php" method="post">
         <!-- <option selected >Producto</option> -->
-        <select  name="talle" class="form-select form-select-sm mb-4" aria-label=".form-select-sm example">
+        <select  name="talle" class="form-select form-select-sm mt-4 mb-3" id="select" aria-label=".form-select-sm example">
         
           <?php
       
@@ -86,14 +86,16 @@
         <h1>Cambiar nombre:</h1>
         <div class="cambiar">
           <div class="form-floating newtitle m-auto">
-            <input type="text" name="nombre" placeholder="nuevo nombre">
+            <input type="text" class="form-control" id="floatingInput" name="nombre" placeholder="Nuevo nombre">
+            <label for="floatingInput">Nuevo nombre</label>
           </div>
         </div>
 
         <h1>Cambiar colegio:</h1>
         <div class="cambiar">
           <div class="form-floating newtitle m-auto">
-            <input type="text" name="colegio" placeholder="nuevo nombre">
+            <input type="text" class="form-control" id="floatingInput" name="colegio" placeholder="Nuevo colegio">
+            <label for="floatingInput">Nuevo colegio</label>
           </div>
         </div>
 
@@ -101,11 +103,12 @@
         <h1 class="mt-3">Cambiar precio:</h1>
         <div class="cambiar">
           <div class="form-floating newtitle m-auto">
-          <input type= "text" name="precio" placeholder="nuevo precio">
+          <input type= "text" class="form-control" id="floatingInput" name="precio" placeholder="Nuevo precio">
+          <label for="floatingInput">Nuevo precio</label>
           </div>
         </div>
         <br>
-        <input type="submit" value="cambiar">
+        <input type="submit" id="bonton" class="btn btn-outline-primary" value="Cambiar">
       </form>
 
       <?php

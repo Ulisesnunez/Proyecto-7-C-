@@ -78,7 +78,7 @@
         <form action="eliminar.php" method="post">
         <!-- <option selected >Producto</option> -->
         <h1>Elija el producto a eliminar</h1>
-        <select  name="talle" class="form-select form-select-sm mb-4" aria-label=".form-select-sm example">
+        <select  name="talle" class="form-select form-select-sm mb-4" id="select" aria-label=".form-select-sm example">
         
           <?php
           for($y = 0; $y < $i; $y++)
@@ -96,7 +96,7 @@
 
       
       <!-- termina -->
-        <input type="submit" value="Eliminar">
+        <input type="submit" id="bonton" class="btn btn-outline-primary" value="Eliminar">
       </form>
 
       <?php
