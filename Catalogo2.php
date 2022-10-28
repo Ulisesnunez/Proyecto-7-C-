@@ -24,7 +24,7 @@ include("connect.php");
 
 <!DOCTYPE html>
 <html lang="en">
-<!-- <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -82,12 +82,13 @@ include("connect.php");
                 <a class="btn btn-dark" href="https://www.mercadopago.com.ar/" role="button">Pague Aquí</a>
             </div>
         </div>
-    </header> -->
+    </header>
     <section class="container">
         <div class="products">
             <!-- empieza card -->
 
             <?php
+            $b=0;
             for($y = 0; $y < $i; $y++)
             {
                 $nro_producto = $fila3[$y]['nro_producto'];
@@ -107,31 +108,32 @@ include("connect.php");
                   $hola = "SELECT count(*) FROM catalogo WHERE producto = '$nombre'";
                   $chau= $conex -> query($hola);
                   $h = 0;
-                  echo "holaaaaaaaaaa";
                   $c2 = $chau -> fetch_array();
-                  echo $c2[0];
-                  for($z = 1; $z <= $c2[0]; $z++)
-                  {
-                    $hola2 = "SELECT talles FROM catalogo WHERE producto = '$nombre' and talles > '$h' order by talles asc";
-                    $chau2 = $conex -> query($hola2);
-                    $c = $chau2 -> fetch_array();
                   ?>
                   <select class="form-select form-select-sm mb-4" aria-label=".form-select-sm example" id="talle">
                   <option selected>Talles</option>
+                  <?php
+                  for($z = 1; $z <= $c2[0]; $z++)
+                  {
+                    $hola2 = "SELECT talle FROM catalogo WHERE producto = '$nombre' and talle > '$h' order by talle asc";
+                    $chau2 = $conex -> query($hola2);
+                    $c = $chau2 -> fetch_array();
+                  ?>
+
                       <option value="<?php echo $z ?>"><?php echo $c[0] ?></option>
                     <?php
                     $h = $c[0] ;
                   }
                   ?>
                 </select>
-                <a href="" data-id="1"  class="btn-add-cart mt-4">Agregar al carrito</a>
+                <input type="submit" name="<?php $b++?>" value="<?php $b++?>" >
+                <!-- <a href="" data-id="1"  class="btn-add-cart mt-4">Agregar al carrito</a> -->
             </div>
         <?php
         }        
         ?>                                
         <!-- termina  card -->
-
-
+      </div>
         <footer id="contact">
         <h2 class="titles">Contacto</h2>
         <div class="socialmedia">

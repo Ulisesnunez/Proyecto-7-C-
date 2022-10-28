@@ -91,13 +91,13 @@ include("connect.php");
         <h2 class="mt-4">Talles</h2>
         <div class="talles row justify-content-evenly">
         <div class="col-2"> 
-        <input type= "checkbox" name="6">
+        <input type= "checkbox" name="06">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle 6
         </label>
         </div>
         <div class="col-2">
-        <input type= "checkbox" name="8">
+        <input type= "checkbox" name="08">
         <label for="flexCheckChecked" class="form-check-label talle">
           Talle 8
         </label>

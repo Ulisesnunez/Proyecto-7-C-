@@ -1,7 +1,7 @@
 <?php
 
     include("connect.php");
-    $num="SELECT nro_producto FROM catalogo ORDER BY nro_producto DESC";
+    $num="SELECT count(*) FROM catalogo ORDER BY nro_producto DESC";
     $ero = mysqli_query($conex,$num);
     $fila2 = $ero -> fetch_array();
     $a = 1;
@@ -83,10 +83,13 @@
           <?php
           for($y = 0; $y < $i; $y++)
           {
-            ?>
-          <option value="<?php echo $fila3[$y][0] ?>"><?php echo $fila3[$y][0] ?></option>
-          
-        <?php
+            if($fila3[$y] != ""){
+              
+              ?>
+            <option value="<?php echo $fila3[$y][0] ?>"><?php echo $fila3[$y][0] ?></option>
+            
+            <?php
+            }
           }
         ?>
       </select>
