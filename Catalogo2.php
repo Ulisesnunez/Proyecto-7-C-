@@ -72,7 +72,8 @@ include("connect.php");
         <div class="header-section container">
             <div>
                 <img onmouseover="showCart(this)" class="cart" src="cart.png" alt="">
-                <p class="count-product">0</p>
+                <!--empieza cont-->
+                <p class="count-product"><?echo $cont;?></p>
             </div>
             <div class="cart-products" id="products-id">
                 <p class="close-btn" onclick="closeBtn()">X</p>
@@ -123,22 +124,36 @@ include("connect.php");
                     $hola2 = "SELECT talle FROM catalogo WHERE producto = '$nombre' and talle > '$h' order by talle asc";
                     $chau2 = $conex -> query($hola2);
                     $c = $chau2 -> fetch_array();
+                    if( $c['talle']!= "")
+                    {
                   ?>
-
+                  
                       <option value="<?php echo $z ?>"><?php echo $c[0] ?></option>
                     <?php
                     $h = $c[0] ;
                   }
+                }
                   ?>
+                  
                 </select>
-                <input type="submit" name="<?php $b++?>" value="<?php $b++?>" >
-                <!-- <a href="" data-id="1"  class="btn-add-cart mt-4">Agregar al carrito</a> -->
+                <form method = "post">
+                <input type="submit" name="agregar" id="<?php $nro_producto?>" value="Agregar al carrito">
+                </form>
             </div>
         <?php
         }        
         ?>                                
         <!-- termina  card -->
       </div>
+
+      <?php /* 
+        $cont = 0;
+        $agregar = $_REQUEST['agregar'];
+        if(isset($agregar)){
+        $cont ++;
+        echo $cont;
+        } */
+      ?>
         <footer id="contact">
         <h2 class="titles">Contacto</h2>
         <div class="socialmedia">

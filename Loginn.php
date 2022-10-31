@@ -15,7 +15,7 @@ if(isset($_POST['login'])){
     if(!$resultado){
         echo'<script type="text/javascript">
         alert("User y pass incorrectos");
-        window.location.href="../../loggin.php";
+        window.location.href="Loginn.php";
         </script>';
     }
     else{
@@ -28,14 +28,12 @@ if(isset($_POST['login'])){
         else{
             echo'<script type="text/javascript">
             alert("User y pass incorrectos");
-            window.location.href="../../loggin.php";
+            window.location.href="Loginn.php";
             </script>';
         }
     }
 }
-else{
-    echo "Error";
-}
+
 ?>
 
 <html>
@@ -50,7 +48,7 @@ else{
     <div class="login-box">
       <img src="COGOLLO-NOT-MYU.png" class="avatar" alt="Avatar Image">
       <h1>Inicio de sesión</h1>
-      <form action="loggin.php" method="POST" id="formLogin">
+      <form action="Loginn.php" method="POST" id="formLogin">
         <label for="username">Usuario</label>
         <input type="text" id="username" placeholder="Ingresa tu Usuario" name="username" required >
         <label for="password">Contraseña</label>

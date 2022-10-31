@@ -1,7 +1,7 @@
 <?php
 
     include("connect.php");
-    $num="SELECT count(*) FROM catalogo ORDER BY nro_producto DESC";
+    $num="SELECT nro_producto FROM catalogo ORDER BY nro_producto DESC";
     $ero = mysqli_query($conex,$num);
     $fila2 = $ero -> fetch_array();
     $a = 1;

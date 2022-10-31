@@ -1,28 +1,29 @@
 <?php 
-include('config.php');
+include('connect.php');
+session_start();
 if(isset($_POST['registro'])){
-    $usuario = $_POST['mail'];
-    $pass = $_POST['contrasenia'];
+    $usuario = $_POST['username'];
+    $pass = $_POST['pass'];
     $passCifrada = password_hash($pass,PASSWORD_DEFAULT);
     
-    
-    $consultaUser = $conn -> prepare("SELECT * FROM clientes WHERE mail= :user");
-    $consultaUser -> bindParam("mail",$usuario,PDO::PARAM_STR);
-    $consultaUser -> execute();
-
-    $resultadoUser = $consultaUser->fetch(PDO::FETCH_ASSOC);
-    if($resultadoUser){ 
+    $a = "SELECT * FROM clientes WHERE username = '$usuario'";
+    $conexion = mysqli_query($conex,$a);
+    $var = $conexion -> fetch_array();
+    if(EMPTY($var[0]) == false){ 
         echo'<script type="text/javascript">
         alert("El usuario ya existe");
         window.location.href="Registro.php";
         </script>';
     }
     else{
-        $consultaRegistro = $conn -> prepare("INSERT INTO clientes(nombre, contrasenia) VALUES (mail, contrasenia)");
-        $consultaRegistro -> bindParam("usuario",$usuario,PDO::PARAM_STR);
+       /*  $consultaRegistro = $conex -> prepare("INSERT INTO clientes(username, pass) VALUES ('$usuario', '$pass')");
+        $consultaRegistro -> bindParam("username",$usuario,PDO::PARAM_STR);
         $consultaRegistro -> bindParam("pass",$passCifrada,PDO::PARAM_STR);
-        $resultadoRegistro = $consultaRegistro -> execute();
-        if(!$resultadoRegistro){ 
+        $resultadoRegistro = $consultaRegistro -> execute(); */
+
+        $b = "INSERT INTO clien(username, pass) VALUES ('$usuario', '$pass')";
+        $conexion2 = mysqli_query($conex,$b);
+        if(EMPTY($conexion2) == TRUE){ 
             echo'<script type="text/javascript">
             alert("No se pudo registrar el usuario");
             window.location.href="Registro.php";
