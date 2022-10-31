@@ -1,9 +1,26 @@
 <?php
 
-    include("connect.php");
-    $catalogo = "SELECT * FROM catalogo WHERE talle = 6";
-    $resultado = mysqli_query($conex,$catalogo);
-
+include("connect.php");
+$num="SELECT nro_producto FROM catalogo ORDER BY nro_producto DESC";
+$ero = mysqli_query($conex,$num);
+$fila2 = $ero -> fetch_array();
+$a = 1;
+$i = 0;
+for($x = 1 ; $x <= $fila2[0] ; $x++)
+{
+    $ta="SELECT * FROM catalogo WHERE nro_producto = $x";
+    $lle=$conex -> query($ta);
+    $b = $lle -> fetch_array();
+    if(empty($b[1]) == false)
+    {
+      if($b[1] !== $a)
+      {
+          $fila3[$i] = $b;
+          $a = $b[1];
+          $i ++;
+      }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -59,14 +76,18 @@
       <div class="col-lg-7 m-auto">
         
         <!-- empieza -->
-        <form action="articulo1.php" method="post">
+        <form action="articulo1.php" method="post" enctype="multipart/form-data">
         <!-- <option selected >Producto</option> -->
         <select  name="talle" class="form-select form-select-sm mt-4 mb-3" id="select" aria-label=".form-select-sm example">
         
           <?php
       
-      while($row = $resultado -> fetch_array()){
-        $nombre = $row['producto'];
+      //while($row = $resultado -> fetch_array()){
+        $b=0;
+        for($y = 0; $y < $i; $y++)
+        {
+            $nombre = $fila3[$y]['producto'];
+           
         
 
         ?>
@@ -108,6 +129,7 @@
           </div>
         </div>
         <br>
+        <input type="file" name="imagen">
         <input type="submit" id="bonton" class="btn btn-outline-primary" value="Cambiar">
       </form>
 
@@ -121,8 +143,9 @@
           $nombre = $_POST['nombre'];
           $colegio = $_POST['colegio'];
           $precio = $_POST['precio'];
+          $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
           
-          $consultaUpdate = 'UPDATE catalogo SET producto = \''.$nombre.'\', colegio = \''.$colegio.'\', precio = \''.$precio.'\' WHERE producto = \''.$producto.'\'';
+          $consultaUpdate = 'UPDATE catalogo SET producto = \''.$nombre.'\', colegio = \''.$colegio.'\', precio = \''.$precio.'\', imagen= \''.$imagen.'\' WHERE producto = \''.$producto.'\'';
           $cambio = mysqli_query($conex,$consultaUpdate);
 
           if($cambio){

@@ -48,12 +48,12 @@ include("connect.php");
           </nav>
     </div>
 
-    <form method="post">
+    <form action="#" method="post" enctype="multipart/form-data">
     <section class="row bg">
       <div class="col-lg-5">
         <img src="myu.png" alt="" class="cardCat my-3">
         <div class="input-group mb-3">
-          <input type="file" class="form-control" id="inputGroupFile02">
+          <input type="file" name= "imagen" class="form-control" id="inputGroupFile02">
         </div>
       </div>
       <div class="col-lg-7 m-auto">

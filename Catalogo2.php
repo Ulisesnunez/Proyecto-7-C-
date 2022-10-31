@@ -98,11 +98,14 @@ include("connect.php");
                 $colegio = $fila3[$y]['colegio'];
                 $stock = $fila3[$y]['stock'];
                 $precio = $fila3[$y]['precio'];
+                $imagen = $fila3[$y]['imagen'];
             ?>
                 <div class="carts">
                     <div>
-                        <img src="imagenesropa/imagen1.jpeg" alt="">
-                        <p><span><?php echo $precio; ?></span>$</p>
+                      <!-- acomodar tamaño imagen -->
+                        <img src="data:image/jpg;base64, <?php echo base64_encode($imagen)?>" alt="">
+                      <!-- termina imagen -->
+                        <p><span><?php echo $precio; ?></span></p>
                 </div>
                 <p class="title mb-1"><?php echo $nombre; ?></p>
                 <p class="title mb-1">Escuela:<?php echo $colegio; ?></p>
