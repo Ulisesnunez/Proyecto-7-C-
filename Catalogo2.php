@@ -1,6 +1,7 @@
 <?php
 include("connect.php");
-    $num="SELECT nro_producto FROM catalogo ORDER BY nro_producto DESC";
+    session_start();
+    $num="SELECT nro_producto FROM catalogo WHERE nro_producto is not null ORDER BY nro_producto DESC";
     $ero = mysqli_query($conex,$num);
     $fila2 = $ero -> fetch_array();
     $a = 1;
@@ -67,24 +68,104 @@ include("connect.php");
         </div>
       </nav>
 </div>    
+
+</header>
+<?php 
+
+$carrito_mio=$_SESSION['carrito'];
+$_SESSION['carrito']=$carrito_mio;
+
+if(isset($_SESSION['carrito'])){
+    for($i=0;$i<=count($carrito_mio)-1;$i ++){
+    if($carrito_mio[$i]!=NULL){ 
+    $total_cantidad = $carrito_mio['cantidad'];
+    $total_cantidad ++ ;
+    $totalcantidad += $total_cantidad;
+    }}}
+?>
 <!-- empiza carrito -->
 <header>
-        <div class="header-section container">
-            <div>
-                <img onmouseover="showCart(this)" class="cart" src="cart.png" alt="">
-                <!--empieza cont-->
-                <p class="count-product"><?echo $cont;?></p>
-            </div>
-            <div class="cart-products" id="products-id">
-                <p class="close-btn" onclick="closeBtn()">X</p>
-                <h3>Mi carrito</h3>
-                <div class="card-items"></div>
-                <h2>Total: $<strong class="price-total">0</strong> </h2>
-                <a class="btn btn-dark" href="https://www.mercadopago.com.ar/" role="button">Pague Aquí</a>
-            </div>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="container-fluid">
+    <a class="navbar-brand" href="#">carrito</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modal_cart" style="color: red;"><i class="fas fa-shopping-cart"></i>0</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
     <!-- termina carrito -->
-    </header>
+  
+    <div class="modal fade" id="modal_cart" tabindex="-1"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+   
+   
+     
+			<div class="modal-body">
+				<div>
+					<div class="p-2">
+						<ul class="list-group mb-3">
+							<?php
+							if(isset($_SESSION['carrito'])){
+							$total=0;
+							for($i=0;$i<=count($carrito_mio)-1;$i ++){
+							if($carrito_mio[$i]!=NULL){
+						
+            ?>
+							<li class="list-group-item d-flex justify-content-between lh-condensed">
+								<div class="row col-12" >
+									<div class="col-6 p-0" style="text-align: left; color: #000000;"><h6 class="my-0">Cantidad: <?php echo $carrito_mio[$i]['cantidad'] ?> : <?php echo $carrito_mio[$i]['titulo']; // echo substr($carrito_mio[$i]['titulo'],0,10); echo utf8_decode($titulomostrado)."..."; ?></h6>
+									</div>
+									<div class="col-6 p-0"  style="text-align: right; color: #000000;" >
+									<span   style="text-align: right; color: #000000;"><?php echo $carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad'];    ?> €</span>
+									</div>
+								</div>
+							</li>
+							<?php
+							$total=$total + ($carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad']);
+							}
+							}
+							}
+							?>
+							<li class="list-group-item d-flex justify-content-between">
+							<span  style="text-align: left; color: #000000;">Total $</span>
+							<strong  style="text-align: left; color: #000000;"><?php
+							if(isset($_SESSION['carrito'])){
+							$total=0;
+							for($i=0;$i<=count($carrito_mio)-1;$i ++){
+							if($carrito_mio[$i]!=NULL){ 
+							$total=$total + ($carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad']);
+							}}}
+							echo $total; ?> $</strong>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a type="button" class="btn btn-primary" href="borrarcarro.php">Vaciar carrito</a>
+      </div>
+    </div>
+  </div>
+</div>
+    
     <section class="container">
         <div class="products">
         
@@ -103,12 +184,12 @@ include("connect.php");
             ?>
                 <div class="carts">
                     <div>
-                      <!-- acomodar tamaño imagen -->
+                     
                         <img src="data:image/jpg;base64, <?php echo base64_encode($imagen)?>" alt="">
-                      <!-- termina imagen -->
-                        <p><span><?php echo $precio; ?></span></p>
+                        <form id="formulario" name="formulario" method="post" action="Carrito.php">
+                        <span><input name="precio" type="hidden" id="precio" value="<?php echo $precio; ?>"></span>
                 </div>
-                <p class="title mb-1"><?php echo $nombre; ?></p>
+                <input name="titulo" type="hidden" id="titulo" value="<?php echo $nombre; ?>">
                 <p class="title mb-1">Escuela:<?php echo $colegio; ?></p>
                   <?php
                   $hola = "SELECT count(*) FROM catalogo WHERE producto = '$nombre'";
@@ -136,8 +217,7 @@ include("connect.php");
                   ?>
                   
                 </select>
-                <form method = "post">
-                <input type="submit" name="agregar" id="<?php $nro_producto?>" value="Agregar al carrito">
+                <button class="btn btn-primary" type="submit" ><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
                 </form>
             </div>
         <?php
@@ -146,14 +226,6 @@ include("connect.php");
         <!-- termina  card -->
       </div>
 
-      <?php /* 
-        $cont = 0;
-        $agregar = $_REQUEST['agregar'];
-        if(isset($agregar)){
-        $cont ++;
-        echo $cont;
-        } */
-      ?>
         <footer id="contact">
         <h2 class="titles">Contacto</h2>
         <div class="socialmedia">
@@ -162,15 +234,6 @@ include("connect.php");
             <a href="https://es-la.facebook.com/"><i class='socialmedia__icon bx bxl-facebook-circle bx-tada' ></i></a>
         </div>
     </footer>
-
-    <script>
-        function showCart(x){
-            document.getElementById("products-id").style.display = "block";
-        }
-        function closeBtn(){
-             document.getElementById("products-id").style.display = "none";
-        }
-
     </script>
     <script src="./custom.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
