@@ -41,12 +41,12 @@ if(isset($_POST['login'])){
     <meta charset="utf-8">
     <title>Inicio de sesión | MYU</title>
     <link rel="stylesheet" href="Logan.css">
-    <link rel="shortcut icon" href="COGOLLO NOT MYU.png">
+    <link rel="shortcut icon" href="myu.png">
   </head>
   <body>
 
     <div class="login-box">
-      <img src="COGOLLO-NOT-MYU.png" class="avatar" alt="Avatar Image">
+      <img src="myu.png" class="avatar" alt="Avatar Image">
       <h1>Inicio de sesión</h1>
       <form action="Loginn.php" method="POST" id="formLogin">
         <label for="username">Usuario</label>

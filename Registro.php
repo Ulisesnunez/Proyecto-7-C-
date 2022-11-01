@@ -45,12 +45,12 @@ if(isset($_POST['registro'])){
     <meta charset="utf-8">
     <title>Regístrate | MYU</title>
     <link rel="stylesheet" href="Registro.css">
-    <link rel="shortcut icon" href="COGOLLO NOT MYU.png">  
+    <link rel="shortcut icon" href="myu.png">  
   </head>
   <body>
 
     <div class="login-box">
-      <img src="COGOLLO-NOT-MYU.png" class="avatar" alt="Avatar Image">
+      <img src="myu.png" class="avatar" alt="Avatar Image">
       <h1>Regístrate</h1>
       <form method="POST" id="formRegistro" onsubmit="return verificarPass();">
         <label for="email">Email</label>
