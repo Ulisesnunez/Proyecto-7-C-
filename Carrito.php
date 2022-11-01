@@ -1,5 +1,5 @@
 <?php session_start(); 
-//aqui empieza el carrito
+
 
 	if(isset($_SESSION['carrito'])){
 		$carrito_mio=$_SESSION['carrito'];
@@ -20,7 +20,6 @@
 
 $_SESSION['carrito']=$carrito_mio;
 
-//aqui termina el carrito
 
 
 header("Location: ".$_SERVER['HTTP_REFERER']."");

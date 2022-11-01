@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2022 a las 10:41:39
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 01-11-2022 a las 15:49:37
+-- Versión del servidor: 10.4.25-MariaDB
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,17 +30,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `nombre_a` varchar(30) DEFAULT NULL,
   `contraseña` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `carrito`
---
-
-CREATE TABLE `carrito` (
-  `prendas` int(11) DEFAULT NULL,
-  `cant` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -168,7 +157,7 @@ INSERT INTO `catalogo` (`nro_producto`, `producto`, `talle`, `colegio`, `stock`,
 --
 
 CREATE TABLE `clientes` (
-  `ID` varchar(100) DEFAULT NULL,
+  `ID` varchar(100) NOT NULL,
   `username` varchar(30) DEFAULT NULL,
   `pass` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -188,13 +177,33 @@ CREATE TABLE `informe_ventas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pedidos`
+-- Estructura de tabla para la tabla `pedido`
 --
 
-CREATE TABLE `pedidos` (
-  `nro_pedido` int(11) DEFAULT NULL,
-  `cliente` varchar(100) DEFAULT NULL,
-  `metodo_de_pago` int(11) DEFAULT NULL
+CREATE TABLE `pedido` (
+  `id` int(11) NOT NULL,
+  `ref` varchar(50) NOT NULL,
+  `cliente` varchar(50) NOT NULL,
+  `estado` varchar(50) NOT NULL,
+  `medio` varchar(50) NOT NULL,
+  `total` int(11) NOT NULL,
+  `fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedidos_datos`
+--
+
+CREATE TABLE `pedidos_datos` (
+  `id` int(11) NOT NULL,
+  `ref` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `articulo` varchar(50) NOT NULL,
+  `precio` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -208,10 +217,30 @@ ALTER TABLE `catalogo`
   ADD PRIMARY KEY (`nro_producto`);
 
 --
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indices de la tabla `informe_ventas`
 --
 ALTER TABLE `informe_ventas`
   ADD PRIMARY KEY (`mes`);
+
+--
+-- Indices de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `cliente` (`cliente`);
+
+--
+-- Indices de la tabla `pedidos_datos`
+--
+ALTER TABLE `pedidos_datos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ref` (`ref`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -228,6 +257,34 @@ ALTER TABLE `catalogo`
 --
 ALTER TABLE `informe_ventas`
   MODIFY `mes` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `pedidos_datos`
+--
+ALTER TABLE `pedidos_datos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `pedido`
+--
+ALTER TABLE `pedido`
+  ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`cliente`) REFERENCES `clientes` (`ID`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `pedidos_datos`
+--
+ALTER TABLE `pedidos_datos`
+  ADD CONSTRAINT `pedidos_datos_ibfk_1` FOREIGN KEY (`ref`) REFERENCES `pedido` (`id`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
