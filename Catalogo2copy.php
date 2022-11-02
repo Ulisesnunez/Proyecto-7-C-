@@ -123,6 +123,8 @@ include("connect.php");
                   ?>
                   
                 </select>
+                <form id="formulario" name="formulario" method="post" action="Carrito.php">
+                  
                 <button class="btn btn-primary" type="submit" ><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
                 </form>
             </div>
