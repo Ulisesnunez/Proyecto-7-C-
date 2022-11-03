@@ -71,6 +71,9 @@ for($x = 1 ; $x <= $fila2[0] ; $x++)
 
     <section class="row bg">
       <div class="col-lg-5">
+      <div class="cont">
+        <a href="administracion.php"><button id="atras" class="btn btn-outline-primary">Volver</button></a>
+        </div>
         <img src="myu.png" alt="" class="cardCat my-3">
       </div>
       <div class="col-lg-7 m-auto">

@@ -116,6 +116,22 @@ nav{
     background-color: #fff4e6;
 }
 
+#atras{
+    color: #fff4e6;
+    border: 1px solid #fff4e6;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+}
+#atras:hover{
+    color: #563d35;
+    background-color: #fff4e6;
+}
+
+.cont{
+    display: flex;
+    align-items: left;
+}
+
 #drop1{
     background-color: #563d35;
     color: #fff4e6;
@@ -313,6 +329,7 @@ footer{
 .cardCat{
     width: 70%;
     height: 30em;
+    
 }
 
 .precio {

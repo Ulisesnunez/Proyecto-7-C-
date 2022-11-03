@@ -50,12 +50,14 @@ include("connect.php");
 
     <form action="#" method="post" enctype="multipart/form-data">
     <section class="row bg">
-      <div class="col-lg-5">
-        <img src="myu.png" alt="" class="cardCat my-3">
-        <div class="input-group mb-3">
-          <input type="file" name= "imagen" class="form-control" id="inputGroupFile02">
+    <div class="col-lg-5">
+        <div class="cont">
+        <a href="administracion.php"><button id="atras" class="btn btn-outline-primary">Volver</button></a>
         </div>
+        <img src="myu.png" alt="" class="cardCat mt-1 mb-3">
       </div>
+        
+      
       <div class="col-lg-7 m-auto">
         <h1 class="titu mt-4">Ingresar nombre del articulo:</h1>
         <div class="cambiar">
@@ -166,6 +168,9 @@ include("connect.php");
         </label>
         </div>
         <div class="col-2 mt-3">
+        <div class="input-group mb-3">
+          <input type="file" name= "imagen" class="form-control" id="inputGroupFile02">
+        </div>
         <input type="submit" id="bonton" class="btn btn-outline-primary" name = "register">
         </div>
         </div>
