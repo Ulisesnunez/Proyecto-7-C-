@@ -38,6 +38,15 @@ CREATE TABLE `admin` (
 -- Estructura de tabla para la tabla `catalogo`
 --
 
+CREATE TABLE `clientes` (
+  `ID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `username` varchar(30) DEFAULT NULL,
+  `pass` varchar(256) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
 CREATE TABLE `catalogo` (
   `nro_producto` int(11) NOT NULL,
   `producto` varchar(100) DEFAULT NULL,
@@ -156,12 +165,6 @@ INSERT INTO `catalogo` (`nro_producto`, `producto`, `talle`, `colegio`, `stock`,
 -- Estructura de tabla para la tabla `clientes`
 --
 
-CREATE TABLE `clientes` (
-  `ID` varchar(100) NOT NULL,
-  `username` varchar(30) DEFAULT NULL,
-  `pass` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
 -- --------------------------------------------------------
 
 --
@@ -183,7 +186,7 @@ CREATE TABLE `informe_ventas` (
 CREATE TABLE `pedido` (
   `id` int(11) NOT NULL,
   `ref` varchar(50) NOT NULL,
-  `cliente` varchar(50) NOT NULL,
+  `cliente` INT NOT NULL,
   `estado` varchar(50) NOT NULL,
   `medio` varchar(50) NOT NULL,
   `total` int(11) NOT NULL,
@@ -219,8 +222,6 @@ ALTER TABLE `catalogo`
 --
 -- Indices de la tabla `clientes`
 --
-ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `informe_ventas`

@@ -21,7 +21,7 @@ if(isset($_POST['registro'])){
         $consultaRegistro -> bindParam("pass",$passCifrada,PDO::PARAM_STR);
         $resultadoRegistro = $consultaRegistro -> execute(); */
 
-        $b = "INSERT INTO clien(username, pass) VALUES ('$usuario', '$pass')";
+        $b = "INSERT INTO clientes(username, pass) VALUES ('$usuario', '$passCifrada')";
         $conexion2 = mysqli_query($conex,$b);
         if(EMPTY($conexion2) == TRUE){ 
             echo'<script type="text/javascript">
