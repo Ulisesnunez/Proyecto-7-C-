@@ -38,7 +38,7 @@ include("connect.php");
     <link rel="stylesheet" href="owl.theme.default.min.css">		
 </head>
 
-<body style="background-color:#fff4e6;"></body>
+<body style="background-color:#fff4e6;">
 <div class="head sticky-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-nav">
         <div class="container-fluid">
