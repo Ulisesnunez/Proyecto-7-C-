@@ -70,37 +70,6 @@ include("connect.php");
 </div>    
 
 </header>
-<?php 
-// include('carrito.php');
-$carrito_mio=$_SESSION['carrito'];
-$_SESSION['carrito']=$carrito_mio;
-
-if(isset($_SESSION['carrito'])){
-    for($i=0;$i<=count($carrito_mio)-1;$i ++){
-    if($carrito_mio[$i]!=NULL){ 
-    $total_cantidad = $carrito_mio['cantidad'];
-    $total_cantidad ++ ;
-    $totalcantidad += $total_cantidad;
-    }}}
-?>
-<!-- empiza carrito -->
-<header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<div class="container-fluid">
-    <a class="navbar-brand" href="#">carrito</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modal_cart" style="color: red;"><i class="fas fa-shopping-cart"></i>0</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-    <!-- termina carrito -->
   
     <div class="modal fade" id="modal_cart" tabindex="-1"  aria-hidden="true">
   <div class="modal-dialog">
@@ -111,48 +80,7 @@ if(isset($_SESSION['carrito'])){
       </div>
       <div class="modal-body">
    
-   
-     
-			<div class="modal-body">
-				<div>
-					<div class="p-2">
-						<ul class="list-group mb-3">
-							<?php
-							if(isset($_SESSION['carrito'])){
-							$total=0;
-							for($i=0;$i<=count($carrito_mio)-1;$i ++){
-							if($carrito_mio[$i]!=NULL){
-						
-            ?>
-							<li class="list-group-item d-flex justify-content-between lh-condensed">
-								<div class="row col-12" >
-									<div class="col-6 p-0" style="text-align: left; color: #000000;"><h6 class="my-0">Cantidad: <?php echo $carrito_mio[$i]['cantidad'] ?> : <?php echo $carrito_mio[$i]['titulo']; // echo substr($carrito_mio[$i]['titulo'],0,10); echo utf8_decode($titulomostrado)."..."; ?></h6>
-									</div>
-									<div class="col-6 p-0"  style="text-align: right; color: #000000;" >
-									<span   style="text-align: right; color: #000000;"><?php echo $carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad'];    ?> €</span>
-									</div>
-								</div>
-							</li>
-							<?php
-							$total=$total + ($carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad']);
-							}
-							}
-							}
-							?>
-							<li class="list-group-item d-flex justify-content-between">
-							<span  style="text-align: left; color: #000000;">Total $</span>
-							<strong  style="text-align: left; color: #000000;"><?php
-							if(isset($_SESSION['carrito'])){
-							$total=0;
-							for($i=0;$i<=count($carrito_mio)-1;$i ++){
-							if($carrito_mio[$i]!=NULL){ 
-							$total=$total + ($carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad']);
-							}}}
-							echo $total; ?> $</strong>
-							</li>
-						</ul>
-					</div>
-				</div>
+
 			</div>
 			
 
@@ -238,11 +166,5 @@ if(isset($_SESSION['carrito'])){
             <a href="https://es-la.facebook.com/"><i class='socialmedia__icon bx bxl-facebook-circle bx-tada' ></i></a>
         </div>
     </footer>
-    </script>
-    <script src="./custom.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="jquery.min.js"></script>
-    <script src="owl.carousel.min.js"></script>
-    <script src="main1.js"></script>
 </body>
 </html>
