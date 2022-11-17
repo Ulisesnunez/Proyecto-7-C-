@@ -183,9 +183,25 @@ CREATE TABLE `informe_ventas` (
 -- Estructura de tabla para la tabla `pedido`
 --
 
+CREATE TABLE pedidos2(
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  id_cliente INT NOT NULL,
+  fecha DATE NOT NULL DEFAULT CURRENT_TIMESTAMP;
+  total FLOAT
+);
+
+CREATE TABLE puente(
+  id_pedido INT NOT NULL,
+  id_producto INT NOT NULL,
+  cantidad_prod INT NOT NULL
+);
+
+
+
+
 CREATE TABLE `pedido` (
   `id` int(11) NOT NULL,
-  `ref` varchar(50) NOT NULL,
+  `ref` INT(11) NOT NULL,
   `cliente` INT NOT NULL,
   `estado` varchar(50) NOT NULL,
   `medio` varchar(50) NOT NULL,
@@ -291,3 +307,8 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+INSERT INTO clientes (username, pass) VALUES('1', '$2y$10$rFNYI7vtTr7SqcxwHn2QFek7JDCMk6HnnyfGvki7d8ousNopnrA/y'),('2', '$2y$10$rFNYI7vtTr7SqcxwHn2QFek7JDCMk6HnnyfGvki7d8ousNopnrA/y');
+INSERT INTO pedidos2 (id_cliente) VALUES (1),(1),(2);
+INSERT INTO puente (id_pedido,id_producto,cantidad_prod) VALUES(1,1,3),(1,2,1),(1,3,2),(2,2,3);
