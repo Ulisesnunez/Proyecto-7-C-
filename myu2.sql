@@ -183,14 +183,14 @@ CREATE TABLE `informe_ventas` (
 -- Estructura de tabla para la tabla `pedido`
 --
 
-CREATE TABLE 'pedidos2'(
+CREATE TABLE pedidos2(
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   id_cliente INT NOT NULL,
   fecha DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
   total FLOAT
 );
 
-CREATE TABLE 'puente'(
+CREATE TABLE puente(
   id_pedido INT NOT NULL,
   id_producto INT NOT NULL,
   cantidad_prod INT NOT NULL
