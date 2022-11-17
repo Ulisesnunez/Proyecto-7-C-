@@ -71,7 +71,7 @@
         </div>
         <div class="boxAdmin">
                 <h3>Informe de pedidos</h3>
-                <a href="Informesdeventa.html" class="btn" id="btn-cat">
+                <a href="Informesdeventa.php" class="btn" id="btn-cat">
                     <img src="graph-up.svg" alt="" class="ajuste">
                 </a>
             </div>

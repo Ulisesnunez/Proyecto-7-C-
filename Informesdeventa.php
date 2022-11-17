@@ -1,3 +1,20 @@
+<?php 
+  include('connect.php');
+  session_start();
+  $month = date('m');
+  $whereMonth = 'WHERE fecha BETWEEN "2022-'.$month.'-1" AND "2022-'.$month.'-31"';
+
+  $pedidosQuery = 'SELECT count(*) as CANTIDAD_PEDIDOS_MES FROM `pedidos2` '.$whereMonth;
+  $pedidosRes = mysqli_query($conex,$pedidosQuery);
+  $cobradoQuery = 'SELECT SUM(cantidad_prod*precio) as valor FROM pedidos2 JOIN puente ON puente.id_pedido = pedidos2.id JOIN catalogo ON puente.id_producto = catalogo.nro_producto '.$whereMonth;
+  $cobradoRes = mysqli_query($conex,$cobradoQuery);
+  $prodQuery = 'SELECT *, max(SUMA) as TOTALVENDIDO FROM catalogo JOIN (SELECT *, sum(cantidad_prod) as SUMA FROM puente JOIN (SELECT id FROM pedidos2 '.$whereMonth.') A ON A.id = puente.id_pedido GROUP BY id_producto) B ON B.id_producto = catalogo.nro_producto;';
+  $prodRes = mysqli_query($conex,$prodQuery);
+  $unidQuery = 'SELECT SUM(cantidad_prod) as unidades_totales_mes FROM pedidos2 JOIN puente ON puente.id_pedido = pedidos2.id '.$whereMonth;
+  $unidRes = mysqli_query($conex,$unidQuery);
+  
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,11 +66,11 @@
         
         <h1 style="color: #563d35;">INFORME DE VENTAS</h1>
 
-   <strong><p style="color: black;"> HOLA </p></strong>
-   <strong><p style="color: black;"> HOLA </p></strong>
-   <strong><p style="color: black;"> HOLA </p></strong>
-   <strong><p style="color: black;"> HOLA </p></strong> 
-   <strong><p style="color: black;"> HOLA </p></strong>
+   <strong><p style="color: black;"> CANTIDAD DE PEDIDOS EN EL MES: <?php $row = mysqli_fetch_assoc($pedidosRes); echo $row['CANTIDAD_PEDIDOS_MES'];?> 
+   </p></strong>
+   <strong><p style="color: black;"> TOTAL FACTURADO EN EL MES: $<?php $row = mysqli_fetch_assoc($cobradoRes); echo $row['valor'];?> </p></strong>
+   <strong><p style="color: black;"> PRODUCTO MAS VENDIDO EN EL MES: <?php $row = mysqli_fetch_assoc($prodRes); echo $row['producto'];?> </p></strong>
+   <strong><p style="color: black;"> UNIDADES TOTALES VENDIDAS EN EL MES: <?php $row = mysqli_fetch_assoc($unidRes); echo $row['unidades_totales_mes'];?> </p></strong>
 
 
     </header>
