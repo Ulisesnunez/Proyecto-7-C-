@@ -24,7 +24,7 @@ session_start();
     <div class="head sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-nav">
             <div class="container-fluid">
-              <a class="logo__name" href="index.php">MYU INDUMENTARIA</a>
+              <a class="logo__name" href="#">MYU INDUMENTARIA</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>

@@ -21,6 +21,10 @@ include("connect.php");
           }
         }
     }
+    $count = 'SELECT count(*) FROM carrito';
+    $rcount = mysqli_query($conex,$count);
+    $dada = $rcount -> fetch_array();
+
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +53,8 @@ include("connect.php");
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
+                <a href="carritolista.php"><img src="carrito.png"></a>
+                <?php echo $dada[0];?>
               </li>
               <li class="nav-item">
                 <a href="#contact">Contacto</a>
@@ -157,13 +163,18 @@ include("connect.php");
             $nombre2 = $_REQUEST['titulo'];
             $colegio2 = $_REQUEST['colegio'];
             $talle2 = $_POST['talle'];
+            $cliente = $_SESSION['username'];
             
-            $consultaCart = "SELECT * FROM catalogo WHERE producto = $nombre2 AND colegio = $colegio2 AND talle = $talle2";
-            $resultadoCart = mysqli_query($conex,$consultaCart);
+            //$consultaCart = "SELECT * FROM catalogo WHERE producto = $nombre2 AND colegio = $colegio2 AND talle = $talle2";
+            $resultadoCart = mysqli_query($conex,'SELECT * FROM catalogo WHERE producto = \''.$nombre2.'\' AND colegio = \''.$colegio2.'\' AND talle = \''.$talle2.'\'');
             $rowCart = $resultadoCart -> fetch_array();
+            $nro_producto = $rowCart['nro_producto'];
+            $imagen = $rowCart['imagen'];
+            $precio = $rowCart['precio'];
 
-            
-
+            $insert = 'INSERT INTO carrito(id_producto, precio, cliente) VALUES (\''.$nro_producto.'\',\''.$precio.'\',\''.$cliente.'\')';
+            $rinsert = mysqli_query($conex,$insert);
+    
 
           }
         ?>                                

@@ -1,6 +1,9 @@
 <?php 
+include('connect.php');
 session_start();
-
+$mostrar = 'SELECT * FROM `carrito` C INNER JOIN catalogo CC ON C.id_producto = CC.nro_producto WHERE cliente = \''.$_SESSION['username'].'\'';
+//SELECT * FROM `carrito` C INNER JOIN catalogo CC ON C.id_producto = CC.nro_producto WHERE cliente = \''.$_SESSION['username'].'\'';
+$resultLista = mysqli_query($conex,$mostrar);
 
 
 
@@ -42,11 +45,10 @@ session_start();
                       <?php echo "Bienvenido " . $_SESSION['username'];?> 
                     </a>
                     <ul class="dropdown-menu" id="drop1" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" id="drop" href="Loginn.php">Iniciar Sesion</a></li>
-                      <li><a class="dropdown-item" id="drop" href="Registro.php">Registrarte</a></li>
+                      <li><a class="dropdown-item" id="drop" href="index.php">Cerar Sesion</a></li>
                     </ul>
                   </li>
-                  <li><i class='bx bx-cart-add bx-border' style='font-size: 1.5em; color: #a13431;'></i></li>
+                  <!-- <li><i class='bx bx-cart-add bx-border' style='font-size: 1.5em; color: #a13431;'></i></li> -->
                 </ul>
               </div>
             </div>
@@ -56,104 +58,74 @@ session_start();
     <header class="header">
     <div class="center mt-5">
     <div class="card pt-3" >
-            <p style="font-weight: bold; color: #0F6BB7; font-size: 22px;">Pedidos</p>
+            <p style="font-weight: bold; color: #0F6BB7; font-size: 22px;">Carrito de compras de <?php echo $_SESSION['username'];?></p>
         <div class="container-fluid p-2">
 <table class="table">
 <thead>
 <tr>
 <th scope="col">#</th>
-<th scope="col">Imagen</th>
-<th scope="col">Cantidad</th>
 <th scope="col">Artículo</th>
+<th scope="col">Cantidad</th>
 <th scope="col">Precio</th>
-<th scope="col">Total</th>
+<!-- <th scope="col">Total</th> -->
 </tr>
 </thead>
-<tbody>
-      
-
-
-
-
+<!-- empieza -->
+<tbody>  
 <div class="container_card">
+
+<?php
+$total = 0;
+while($rowc = $resultLista -> fetch_array()){
+  $imagen = $rowc['imagen'];
+  $producto = $rowc['producto'];
+  $precio = $rowc['precio'];
+  $total = $total + $precio;
+  
+  ?>
 <tr>
-<th scope="row" style="vertical-align: middle;"><?php echo $i; ?></th>
-<td>
-</td>
-<td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['cantidad'] ?></td>
-<td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['titulo'] ?></td>
-<td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['precio'] ?>€</td>
-<td style="vertical-align: middle;"><?php echo $carrito_mio[$i]['precio'] * $carrito_mio[$i]['cantidad']; ?>€</td>
-</tr>    
+<td style="vertical-align: middle;"><?php echo base64_encode($imagen);?></td>
+<td style="vertical-align: middle;"><?php echo $producto;?></td>
+<td style="vertical-align: middle;"><input type="number" name="cantidad" value="1"></td>
+<td style="vertical-align: middle;"><?php echo $precio;?></td>
+</tr> 
+
+<?php
+}
+?>
 
 
 </tbody>
+<!-- termina -->
 </table>
 
 
 
-            </div>
-        </div>
-
-
-
-
-<hr>
-
 
 <!-- datos cliente -->
-<div class="container p-5">
-<form class="row g-3 needs-validation" action="pagar.php" method="POST" novalidate>
-
-<p style="font-weight: bold; color: #0F6BB7; font-size: 22px;">Datos de envío</p>
-
-<input type="hidden" name="dato" value="insertar" >
-  <div class="col-md-6">
-    <label for="validationCustom01" class="form-label">Nombre</label>
-    <input type="text" class="form-control" id="validationCustom01" name="nombre" required>
-    <div class="valid-feedback">
-    Correcto!
-    </div>
-      <div class="invalid-feedback">
-      Por favor, inserte su nombre.
-      </div>
-  </div>
-  <div class="col-md-6">
-    <label for="validationCustom02" class="form-label">Apellidos</label>
-    <input type="text" class="form-control" id="validationCustom02" name="apellidos"  required>
-    <div class="valid-feedback">
-    Correcto!
-    </div>
-      <div class="invalid-feedback">
-      Por favor, inserte sus apellidos.
-      </div>
-  </div>
-
-  <div class="col-md-6">
-    <label for="validationCustom03" class="form-label">Localidad</label>
-    <input type="text" class="form-control" id="validationCustom03" name="localidad" required>
-    <div class="valid-feedback">
-    Correcto!
-    </div>
-      <div class="invalid-feedback">
-      Por favor, inserte su localidad.
-      </div>
-  </div>
-  <div class="col-md-6">
-    <label for="validationCustom04" class="form-label">Teléfono</label>
-    <input type="text" class="form-control" id="validationCustom04" name="telefono" required>
-    <div class="valid-feedback">
-    Correcto!
-    </div>
-      <div class="invalid-feedback">
-      Por favor, inserte su teléfono.
-      </div>
-  </div>
+  <form  action= "carritolista.php" method = "post">
+  <button  style = "float: left;" class="btn btn-success mb-4" type="submit" name="vaciar">Vaciar Carrito</button>
+  </form>
+  <form action= "carritolista.php" method = "post">
+  <button  class="btn btn-success mb-4" type="submit" name="pagar">Pagar y finalizar</button>
+  </form>
+  <h4 style = "float: right;"><?php echo "Total: ". $total;?></h4>
 
 
-  <button  class="btn btn-success mb-4" type="submit">Pagar y finalizar</button>
+  <?php
+  if(isset($_REQUEST['vaciar'])){
+
+      $convarciar = 'DELETE FROM carrito WHERE cliente = \''.$_SESSION['username'].'\'';
+      $resvaciar = mysqli_query($conex,$convarciar);
 
 
+  }
+  
+  if($_REQUEST['pagar']){
+
+    //header("Location: .php");
+  } 
+  ?>
 
 
 
