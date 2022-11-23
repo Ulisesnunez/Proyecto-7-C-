@@ -123,7 +123,7 @@ while($rowc = $resultLista -> fetch_array()){
   
   if($_REQUEST['pagar']){
 
-    //header("Location: .php");
+    //header("Location: confirmarcompra.php");
   } 
   ?>
 
