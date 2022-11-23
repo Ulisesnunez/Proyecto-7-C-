@@ -157,10 +157,13 @@ include("connect.php");
             $nombre2 = $_REQUEST['titulo'];
             $colegio2 = $_REQUEST['colegio'];
             $talle2 = $_POST['talle'];
+            
+            $consultaCart = "SELECT * FROM catalogo WHERE producto = $nombre2 AND colegio = $colegio2 AND talle = $talle2";
+            $resultadoCart = mysqli_query($conex,$consultaCart);
+            $rowCart = $resultadoCart -> fetch_array();
 
-            echo $nombre2;
-            echo $colegio2;
-            echo $talle2;
+            
+
 
           }
         ?>                                
