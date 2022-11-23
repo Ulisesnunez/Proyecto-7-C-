@@ -22,7 +22,13 @@ if(isset($_POST['login'])){
         if(password_verify($pass,$resultado['pass'])){ 
             $_SESSION['IdUsuario'] = $resultado['ID'];
             $_SESSION['username'] = $resultado['username'];
-           header("Location: index.php");
+            if($_SESSION['username'] == "admin"){
+              header("Location: administracion.php");
+            }
+            else
+            {
+              header("Location: indexAdentro.php");
+            }
         }
         else{
             echo'<script type="text/javascript">

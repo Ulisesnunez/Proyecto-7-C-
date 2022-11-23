@@ -1,3 +1,10 @@
+<?php
+include('config.php');
+session_start();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,20 +31,18 @@
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <a href="Loginn.php">Catalogo</a>
+                    <a href="Catalogo2.php">Catalogo</a>
                   </li>
                   <li class="nav-item">
-                    <a href="#contact">Contacto</a>
+                  <a href="#contact">Contacto</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Acceder 
+                      <?php echo "Bievenido ". $_SESSION['username'];?> 
                     </a>
                     <ul class="dropdown-menu" id="drop1" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item" id="drop" href="Loginn.php">Iniciar Sesion</a></li>
-                      <li><a class="dropdown-item" id="drop" href="Registro.php">Registrarte</a></li>
-                    </ul>
-                  </li>
+                      <li><a class="dropdown-item" id="drop" href="index.php">Cerrar sesión</a></li> 
+                     </li> 
                   <!-- <li><i class='bx bx-cart-add bx-border' style='font-size: 1.5em; color: #a13431;'></i></li> -->
                 </ul>
               </div>

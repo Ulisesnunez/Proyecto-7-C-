@@ -42,7 +42,7 @@ include("connect.php");
 <div class="head sticky-top">
     <nav class="navbar navbar-expand-lg navbar-light bg-nav">
         <div class="container-fluid">
-          <a class="logo__name" href="indexAdentro.php">MYU INDUMENTARIA</a>
+          <a class="logo__name" href="administracion.php">MYU INDUMENTARIA</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -58,7 +58,7 @@ include("connect.php");
                   <?php echo "Bienvenido ". $_SESSION['username'];?>
                 </a>
                 <ul class="dropdown-menu" id="drop1" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" id="drop" href="Loginn.php">Cerrar Sesion</a></li>
+                  <li><a class="dropdown-item" id="drop" href="index.php">Cerrar Sesion</a></li>
                 </ul>
               </li>
             </ul>
@@ -112,20 +112,19 @@ include("connect.php");
                     <div>
                      
                         <img src="data:image/jpg;base64, <?php echo base64_encode($imagen)?>" alt="">
-                        <form id="formulario" name="formulario" method="post" action="Catalogo2.php">
+                        <form id="formulario" name="formulario" method="post" action="Carrito.php">
                         <span><p><?php echo $precio?></p></span>
                 </div>
                 <p class="title mb-1"><?php echo $nombre?></p>
                 <input name="titulo" type="hidden" id="titulo" value="<?php echo $nombre?>">
                 <p class="title mb-1">Escuela:<?php echo $colegio; ?></p>
-                <input name = "colegio" type="hidden" id = "colegio" value="<?php echo $colegio?>">
                   <?php
                   $hola = "SELECT nro_producto FROM catalogo WHERE producto = '$nombre'";
                   $chau= $conex -> query($hola);
                   $h = 0;
                   $c2 = $chau -> fetch_array();
                   ?>
-                  <select class="form-select form-select-sm mb-4" name="talle" aria-label=".form-select-sm example" id="talle">
+                  <select class="form-select form-select-sm mb-4" aria-label=".form-select-sm example" id="talle">
                   <option selected>Talles</option>
                   <?php
                   for($z = 1; $z <= $c2[0]; $z++)
@@ -137,7 +136,7 @@ include("connect.php");
                     {
                   ?>
                   
-                      <option value="<?php echo $c[0]?>"><?php echo $c[0] ?></option>
+                      <option value="<?php echo $z ?>"><?php echo $c[0] ?></option>
                     <?php
                     $h = $c[0] ;
                   }
@@ -145,29 +144,16 @@ include("connect.php");
                   ?>
                   
                 </select>
-                <button class="btn btn-primary" type="submit" name = "anadir" > <i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                <button class="btn btn-primary" type="submit" ><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
                 </form>
             </div>
         <?php
               
         }
-         
-          if(isset($_REQUEST['anadir'])){
-
-            $nombre2 = $_REQUEST['titulo'];
-            $colegio2 = $_REQUEST['colegio'];
-            $talle2 = $_POST['talle'];
-
-            echo $nombre2;
-            echo $colegio2;
-            echo $talle2;
-
-          }
+        
         ?>                                
         <!-- termina  card -->
       </div>
-
-      
       
 
         <footer id="contact">
